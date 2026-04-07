@@ -1,0 +1,135 @@
+# Endgame AI economic plans
+
+endgame_economy_plan = {
+	ai_weight = { weight = 50 }
+		
+	income = {
+		energy = 200
+		minerals = 300
+		alloys = 300
+		physics_research = 10000
+		society_research = 10000
+		engineering_research = 10000
+		trade = 100
+	}
+	
+	subplan = {
+		optional = yes
+		set_name = "Endgame Base Pops"
+		pops = 250000
+	}
+	
+	subplan = {
+		set_name = "Endgame Alloys"
+		potential = {
+			country_uses_bio_ships = no
+		}
+
+		income = {
+			alloys = 1000
+		}
+	}
+	
+	subplan = {
+		optional = yes
+		set_name = "Endgame Naval Cap"
+		potential = {
+			OR = {
+				used_naval_capacity_percent > 0.75
+				AND = {
+					has_technology = tech_cruisers
+					used_naval_capacity_percent > 0.65
+				}
+				AND = {
+					has_technology = tech_battleships
+					used_naval_capacity_percent > 0.55
+				}
+			}
+		}
+
+		naval_cap = 9999 # Max set in defines
+	}
+	
+	subplan = {
+		scaling = yes
+		set_name = "Endgame Alloys (Scaling)"
+		potential = {
+			country_uses_bio_ships = no
+		}
+
+		income = {
+			alloys = 1000
+		}
+	}
+
+	subplan = {
+		scaling = yes
+		set_name = "Endgame BioShip Food"
+		potential = {
+			country_uses_bio_ships = yes
+		}
+
+		income = {
+			food = 1000
+		}
+	}
+
+	subplan = {
+		scaling = yes
+		set_name = "Endgame Physics"
+
+		income = {
+			physics_research = 5000
+		}
+	}
+
+	subplan = {
+		scaling = yes
+		set_name = "Endgame Society"
+
+		income = {
+			society_research = 5000
+		}
+	}
+
+	subplan = {
+		scaling = yes
+		set_name = "Endgame Engineering"
+
+		income = {
+			engineering_research = 5000
+		}
+	}
+	
+	subplan = {
+		scaling = yes
+		set_name = "Endgame Scaling Pops"
+
+		pops = 100000
+	}
+	
+	subplan = {
+		scaling = yes
+		set_name = "Galactic Nemesis Endgame Minerals Scaling"
+		potential = {
+			has_ascension_perk = ap_become_the_crisis
+		}
+
+		income = {
+			minerals = 1000
+		}
+	}
+	
+	subplan = {
+		scaling = yes
+		set_name = "Endgame Obsessional CG Scaling"
+		potential = {
+			has_valid_civic = civic_machine_obsessional_directive
+		}
+		income = {
+			consumer_goods = 100
+		}
+	}
+		
+	inline_script = "ai/ai_strategic_resources"
+}

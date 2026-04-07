@@ -1,0 +1,48 @@
+# A plan when the AI stays in limbo without any plan for research because not meeting some (unnecesary) resource target, such as minerals
+
+basic_economy_plan = {
+	ai_weight = { weight = 500 }
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Physics Stellar AI additional research"
+		potential = {
+			meets_basic_resource_thresholds = yes
+			has_monthly_income = { resource = physics_research value < @stellarai_additional_research_economic_plan_scaling_research_limit }
+		}
+
+		income = {
+			physics_research = @stellarai_additional_research_economic_plan_scaling_research_target
+		}
+	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Society Stellar AI additional research"
+		potential = {
+			meets_basic_resource_thresholds = yes
+			has_monthly_income = { resource = society_research value < @stellarai_additional_research_economic_plan_scaling_research_limit }
+		}
+
+		income = {
+			society_research = @stellarai_additional_research_economic_plan_scaling_research_target
+		}
+	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Engineering Stellar AI additional research"
+		potential = {
+			meets_basic_resource_thresholds = yes
+			has_monthly_income = { resource = engineering_research value < @stellarai_additional_research_economic_plan_scaling_research_limit }
+		}
+		
+		income = {
+			engineering_research = @stellarai_additional_research_economic_plan_scaling_research_target
+		}
+	}
+	
+}

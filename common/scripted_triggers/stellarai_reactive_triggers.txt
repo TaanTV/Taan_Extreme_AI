@@ -1,0 +1,58 @@
+
+stellarai_military_emergency = {
+	OR = {
+		AND = {
+			highest_threat > 30
+			used_naval_capacity_percent < 0.9
+		}
+		highest_threat > 45
+	}
+}
+
+stellarai_machine_energy_emergency = {
+	is_machine_empire = yes
+	OR = {
+		NOT = { has_monthly_income = { resource = energy value > 10 } }
+		resource_stockpile_compare = { resource = energy value < 1200 }
+	}
+}
+
+stellarai_machine_minerals_emergency = {
+	is_machine_empire = yes
+	OR = {
+		NOT = { has_monthly_income = { resource = minerals value > 12 } }
+		resource_stockpile_compare = { resource = minerals value < 900 }
+	}
+}
+
+stellarai_machine_basic_econ_stable = {
+	is_machine_empire = yes
+	has_monthly_income = { resource = energy value > 18 }
+	has_monthly_income = { resource = minerals value > 15 }
+	has_monthly_income = { resource = alloys value > 6 }
+	resource_stockpile_compare = { resource = energy value > 2200 }
+	resource_stockpile_compare = { resource = minerals value > 1400 }
+	NOT = { stellarai_machine_energy_emergency = yes }
+	NOT = { stellarai_machine_minerals_emergency = yes }
+}
+
+stellarai_machine_expand_ok = {
+	stellarai_machine_basic_econ_stable = yes
+	is_at_war = no
+	has_resource = { type = influence amount > 100 }
+}
+
+stellarai_machine_research_ramp = {
+	stellarai_machine_basic_econ_stable = yes
+	years_passed > 25
+	num_owned_planets > 3
+}
+
+stellarai_exterminator_war_ramp = {
+	has_valid_civic = civic_machine_terminator
+	OR = {
+		is_at_war = yes
+		years_passed > 12
+		highest_threat > 20
+	}
+}

@@ -1,0 +1,38 @@
+modifier = {
+    factor = 6
+    owner = {
+        has_deficit = $STRATEGIC_RESOURCE$
+    }
+}
+
+modifier = {
+    factor = 3
+    owner = {
+        OR = {
+            has_monthly_income = {
+                resource = $STRATEGIC_RESOURCE$
+                value < 1
+            }
+            resource_stockpile_compare = {
+                resource = $STRATEGIC_RESOURCE$
+                value < 15
+            }
+        }
+    }
+}
+
+modifier = {
+    factor = 0.5
+    owner = {
+        AND = {
+            has_monthly_income = {
+                resource = $STRATEGIC_RESOURCE$
+                value > 6
+            }
+            resource_stockpile_compare = {
+                resource = $STRATEGIC_RESOURCE$
+                value >= 50
+            }
+        }
+    }
+}

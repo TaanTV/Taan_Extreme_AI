@@ -1,0 +1,7 @@
+NAND = {
+	exists = owner
+	owner = {
+		is_ai = yes
+	}
+	has_planet_flag = $PLANET_FLAG$
+}

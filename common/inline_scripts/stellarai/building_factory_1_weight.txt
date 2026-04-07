@@ -1,0 +1,27 @@
+ai_weight = {
+		factor = @factory_tier1_factor
+
+		inline_script = {
+			script = stellarai/invalid_planet_type_guard
+			PLANET_FLAG = stellarai_invalid_for_industry_to_build
+		}
+
+		modifier = {
+			factor = 0.5
+			AND = {
+				years_passed < 31
+				owner = {
+					AND = {
+						has_monthly_income = {
+							resource = consumer_goods
+							value > 8
+						}
+						is_at_war = no
+						is_gestalt = no
+						is_hive_empire = no
+						highest_threat < 20
+					}
+				}
+			}
+		}
+}

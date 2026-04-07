@@ -1,0 +1,25 @@
+ai_weight = {
+		factor = @forge_tier1_factor
+
+		inline_script = {
+			script = stellarai/invalid_planet_type_guard
+			PLANET_FLAG = stellarai_invalid_for_industry
+		}
+
+		modifier = {
+			factor = 0.5
+			AND = {
+				years_passed < 31
+				owner = {
+					AND = {
+						has_monthly_income = {
+							resource = alloys
+							value > 15
+						}
+						is_at_war = no
+						highest_threat < 20
+					}
+				}
+			}
+		}
+}
