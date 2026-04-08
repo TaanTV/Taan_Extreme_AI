@@ -1358,6 +1358,9 @@ leader_trait_educator = {
 		weight = @shared_trait_weight
 		inline_script = "paragon/council_weight_mult"
 	}
+	ai_weight = {
+		factor = 1 # add
+	}
 	background_icon = "GFX_leader_background_destiny_1"
 }
 

@@ -2582,6 +2582,9 @@ leader_trait_supreme_organizer = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/council_weight_mult
 	}
+	ai_weight = {
+		factor = 10000000 # add
+	}
 	background_icon = "GFX_leader_background_destiny_1"
 }
 

@@ -1817,7 +1817,7 @@ leader_trait_peacekeeper = {
 		inline_script = paragon/council_weight_mult
 	}
 	ai_weight = {
-		factor = 1  # add
+		factor = 0  # add
 	}
 	background_icon = GFX_leader_background_destiny_1
 }

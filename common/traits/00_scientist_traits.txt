@@ -3119,7 +3119,7 @@ leader_trait_knowledge_for_the_masses = {
 		has_trait = subclass_scientist_councilor
 	}
 	leader_class = { scientist }
-	ai_weight = 100
+	ai_weight = 1 # add 100 
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -3218,7 +3218,7 @@ leader_trait_great_researcher = {
 		inline_script = paragon/council_weight_mult
 	}
 	ai_weight = {
-		factor = 10000000
+		factor = 10000000 # add
 	}
 	background_icon = "GFX_leader_background_destiny_1"
 }
@@ -3332,6 +3332,9 @@ leader_trait_brilliant_shipwright = {
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/council_weight_mult
+	}
+	ai_weight = {
+		factor = 1 # add
 	}
 	background_icon = "GFX_leader_background_destiny_1"
 }
