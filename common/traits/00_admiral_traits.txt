@@ -1675,6 +1675,9 @@ leader_trait_guerilla_tactics = {
 			SUBCLASS = commander_admiral
 		}
 	}
+	ai_weight = {
+		factor = 0 # add
+	}
 	background_icon = GFX_leader_background_destiny_1
 }
 
@@ -1715,6 +1718,9 @@ leader_trait_survivalist = {
 			script = paragon/subclass_weight_mult
 			SUBCLASS = commander_admiral
 		}
+	}
+	ai_weight = {
+		factor = 100 # add
 	}
 	background_icon = GFX_leader_background_destiny_1
 }

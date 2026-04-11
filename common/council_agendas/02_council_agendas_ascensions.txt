@@ -69,7 +69,7 @@ agenda_mind_over_matter = {
 		}
 	}
 	ai_weight = {
-		base = @ascension_tech_agenda_weight
+		base =  10000000 # add @ascension_tech_agenda_weight
 	}
 }
 
@@ -105,7 +105,7 @@ agenda_psionic_supremacy = {
 	}
 	finish_modifier = agenda_psionic_supremacy_finish_no_covenant
 	ai_weight = {
-		base = @ascension_agenda_weight
+		base = 10000000 # add @ascension_agenda_weight
 	}
 }
 
@@ -386,7 +386,7 @@ agenda_cybernetic_advantage = {
 	}
 	finish_modifier = agenda_cybernetic_advantage_finish
 	ai_weight = {
-		base = @ascension_agenda_weight
+		base = 100000000 # add @ascension_agenda_weight
 	}
 }
 
@@ -453,7 +453,7 @@ agenda_flesh_is_weak = {
 		}
 	}
 	ai_weight = {
-		base = @ascension_tech_agenda_weight
+		base = 100000000 # add @ascension_tech_agenda_weight
 	}
 }
 
@@ -669,7 +669,7 @@ agenda_synthetic_evolution = {
 		}
 	}
 	ai_weight = {
-		base = @ascension_tech_agenda_weight
+		base = 10000000 # add @ascension_tech_agenda_weight
 	}
 }
 
@@ -781,7 +781,7 @@ agenda_synthetic_age = {
 		}
 	}
 	ai_weight = {
-		base = @ascension_tech_agenda_weight
+		base = 10000000 # add @ascension_tech_agenda_weight
 	}
 }
 
@@ -865,7 +865,7 @@ agenda_modularity_reshape_form = {
 	}
 	finish_modifier = agenda_modularity_reshape_form_finish
 	ai_weight = {
-		base = @ascension_agenda_weight
+		base = 100000 # add @ascension_agenda_weight
 	}
 }
 
@@ -961,7 +961,7 @@ agenda_cloning_replication = {
 	}
 	finish_modifier = agenda_cloning_replication_finish
 	ai_weight = {
-		base = @ascension_agenda_weight
+		base = 1000000 # add @ascension_agenda_weight
 	}
 }
 

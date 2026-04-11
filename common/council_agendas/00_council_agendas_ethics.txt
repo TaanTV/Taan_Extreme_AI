@@ -3,6 +3,7 @@ agenda_we_come_in_peace = {
 	agenda_cost = @base_ethic_agenda_cost
 	potential = {
 		is_gestalt = no
+		is_ai = no
 	}
 	allow = {
 		custom_tooltip = {
@@ -72,6 +73,9 @@ agenda_we_come_in_peace = {
 			}
 		}
 	}
+	ai_weight = {
+        base = 0  # add block
+    }
 }
 
 agenda_display_of_power = {
@@ -111,6 +115,9 @@ agenda_display_of_power = {
 			}
 		}
 	}
+	ai_weight = {
+        base = 100  # add
+    }
 }
 
 agenda_open_arms = {
@@ -150,6 +157,9 @@ agenda_open_arms = {
 			}
 		}
 	}
+	ai_weight = {
+        base = 1000  # add
+    }
 }
 
 agenda_strong_on_our_own = {
@@ -189,6 +199,9 @@ agenda_strong_on_our_own = {
 			}
 		}
 	}
+	ai_weight = {
+		base = 200000 # add
+	}
 }
 
 agenda_give_and_take = {
@@ -206,6 +219,9 @@ agenda_give_and_take = {
 		faction_approval = 0.1
 		pop_ethic_egalitarian_attraction_mult = 0.1
 	}
+	ai_weight = {
+        base = 1  # add
+    }
 	finish_modifier = agenda_give_and_take_finish
 }
 
@@ -245,6 +261,9 @@ agenda_preserve_the_order = {
 				}
 			}
 		}
+	}
+	ai_weight = {
+    	base = 100000  # add
 	}
 }
 
@@ -290,6 +309,9 @@ agenda_a_higher_purpose = {
 			}
 		}
 	}
+	ai_weight = {
+        base = 100000  # add
+    }
 }
 
 agenda_progressive_growth = {
@@ -352,6 +374,9 @@ agenda_progressive_growth = {
 			}
 		}
 	}
+	ai_weight = {
+        base = 500000  # add
+    }
 }
 
 agenda_finding_the_voice = {
@@ -365,6 +390,9 @@ agenda_finding_the_voice = {
 	modifier = {
 		country_agendas_unity_produces_add = 5
 		country_unity_produces_mult = 0.1
+	}
+	ai_weight = {
+		base = 500000 # add
 	}
 	finish_modifier = agenda_finding_the_voice_finish
 }

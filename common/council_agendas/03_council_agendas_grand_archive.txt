@@ -10,6 +10,7 @@ agenda_galactic_trawling = {
 	potential = {
 		has_paragon_dlc = yes
 		has_grand_archive_dlc = yes
+		is_ai = no
 	}
 
 	modifier = {
