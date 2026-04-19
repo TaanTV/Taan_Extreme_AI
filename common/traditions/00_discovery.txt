@@ -64,7 +64,7 @@ tr_discovery_to_boldly_go = {
 	}
 
 	ai_weight = {
-		factor = 5000	# AI should prefer this one first, more useful early
+		factor =  1 # add 5000	# AI should prefer this one first, more useful early
 	}
 }
 
@@ -121,7 +121,7 @@ tr_discovery_science_division = {
 	}
 
 	ai_weight = {
-		factor = 100000
+		factor = 100000000
 	}
 }
 
@@ -162,7 +162,7 @@ tr_discovery_polytechnic_education = {
 	}
 
 	ai_weight = {
-		factor = 10000
+		factor = 100000000
 	}
 }
 
@@ -213,6 +213,6 @@ tr_discovery_faith_in_science = {
 	}
 
 	ai_weight = {
-		factor = 5000
+		factor = 10000000
 	}
 }
