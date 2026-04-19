@@ -14,6 +14,9 @@ space_fauna_exhibition = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
@@ -31,7 +34,7 @@ space_fauna_exhibition = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 10000 # add 0
 	}
 }
 

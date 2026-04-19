@@ -100,6 +100,9 @@ nutritional_plenitude = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
@@ -127,7 +130,7 @@ nutritional_plenitude = {
 	}
 
 	ai_weight = {
-		weight = @EdictHighPrio
+		weight = 10000 # add @EdictHighPrio
 	}
 }
 
@@ -394,6 +397,9 @@ observation_instinct = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
@@ -420,7 +426,7 @@ observation_instinct = {
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = 10000 # add @EdictMedPrio
 	}
 }
 
@@ -2232,6 +2238,9 @@ storm_attraction_field = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = 15
 			multiplier = value:edict_size_effect
 		}
@@ -2274,7 +2283,9 @@ storm_repel_field = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			
+            trigger = {
+                is_ai = no
+            }
 			unity = 15
 			multiplier = value:edict_size_effect
 		}
@@ -2317,6 +2328,9 @@ auto_hunker_down = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = 15
 			multiplier = value:edict_size_effect
 		}

@@ -686,10 +686,16 @@ clearing_motes = {
 	resources = {
 		category = rare_edicts
 		cost = {
+            trigger = {
+                is_ai = no
+            }
 			volatile_motes = 0.5
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			volatile_motes = 0.5
 			multiplier = value:edict_size_effect
 		}
@@ -709,7 +715,7 @@ clearing_motes = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 10000 # add 0
 	}
 }
 
@@ -719,10 +725,16 @@ clearing_motes_wilderness = {
 	resources = {
 		category = rare_edicts
 		cost = {
+            trigger = {
+                is_ai = no
+            }
 			volatile_motes = 0.5
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			volatile_motes = 0.5
 			multiplier = value:edict_size_effect
 		}
@@ -742,7 +754,7 @@ clearing_motes_wilderness = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 10000 # add
 	}
 }
 
