@@ -2346,6 +2346,10 @@ leader_enhancement = {
 	option = {
 		name = "leader_enhancement_selected_lineages"
 
+    	potential = {
+    	    is_ai = no # add
+    	}
+
 		policy_flags = {
 			leader_enhancement_selected_lineages
 		}
@@ -2397,9 +2401,70 @@ leader_enhancement = {
 
 		prerequisites = { tech_selected_lineages }
 	}
+# ADDED
+	option = {
+		name = "leader_enhancement_selected_lineages_AI"
+
+		policy_flags = {
+			leader_enhancement_selected_lineages
+		}
+		modifier = {
+			leader_initial_skill = 1
+			leader_lifespan_add = 10
+			leaders_cost_mult = 1
+		}
+    	potential = {
+        	is_ai = yes  # only AI
+    	}
+
+		in_breach_of = {
+			{
+				key = resolution_galacticstudies_ethical_guideline_refactoring
+				trigger = {
+					has_technology = tech_capacity_boosters
+				}
+			}
+			{
+				key = resolution_galacticstudies_extradimensional_experimentation
+				trigger = {
+					has_technology = tech_capacity_boosters
+				}
+			}
+		}
+
+		valid = {
+			NOT = { has_ethic = "ethic_fanatic_egalitarian" }
+		}
+
+		AI_weight = {
+			factor = 2
+			modifier = {
+				factor = 0
+				OR = {
+					has_ethic = "ethic_egalitarian"
+					has_ethic = "ethic_fanatic_egalitarian"
+				}
+				NOT = {
+					has_valid_ai_personality = yes
+					is_ai = yes
+					is_galactic_community_member = yes
+					OR = {
+						is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+						is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+					}
+				}
+			}
+		}
+
+		prerequisites = { tech_selected_lineages }
+	}
 
 	option = {
 		name = "leader_enhancement_capacity_boosters"
+		
+    	potential = {
+    	    is_ai = no # add
+    	}
 
 		policy_flags = {
 			leader_enhancement_capacity_boosters
@@ -2410,6 +2475,35 @@ leader_enhancement = {
 			leaders_cost_mult = 2
 			leaders_upkeep_mult = 1
 		}
+
+		valid = {
+			NOR = {
+				has_ethic = "ethic_egalitarian"
+				has_ethic = "ethic_fanatic_egalitarian"
+			}
+		}
+
+		prerequisites = { tech_capacity_boosters }
+
+		AI_weight = {
+			factor = 3
+		}
+	}
+
+	option = {
+		name = "leader_enhancement_capacity_boosters_AI"
+
+		policy_flags = {
+			leader_enhancement_capacity_boosters
+		}
+		modifier = {
+			leader_initial_skill = 2
+			leader_lifespan_add = 20
+			leaders_cost_mult = 2
+		}
+    	potential = {
+        	is_ai = yes  # add only AI
+    	}
 
 		valid = {
 			NOR = {
