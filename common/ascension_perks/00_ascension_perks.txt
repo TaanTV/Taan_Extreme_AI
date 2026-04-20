@@ -683,7 +683,7 @@ ap_lord_of_war = {
 	}
 
 	ai_weight = {
-		factor = 0.01
+		factor = 0 # add
 		modifier = {
 			factor = 2
 			has_ethic = ethic_militarist

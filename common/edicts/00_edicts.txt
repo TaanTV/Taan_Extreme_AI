@@ -70,6 +70,9 @@ fortify_the_border = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
@@ -86,6 +89,10 @@ fortify_the_border = {
 			factor = 0
 			NOT = { has_country_flag = has_encountered_other_empire }
 		}
+        modifier = {shield_gases
+            weight = @EdictHighPrio  # High
+            years_passed >= 25  # prio 25 years
+        }
 	}
 }
 
@@ -508,7 +515,7 @@ tracking_implants = {
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = 0 # add @EdictMedPrio
 		modifier = {
 			factor = 2
 			has_ethic = ethic_authoritarian
@@ -560,15 +567,15 @@ thought_enforcement = {
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
-		modifier = {
-			factor = 2
-			has_ethic = ethic_authoritarian
-		}
-		modifier = {
-			factor = 3
-			has_ethic = ethic_fanatic_authoritarian
-		}
+		weight = 0 # add @EdictMedPrio
+#		modifier = {
+#			factor = 2
+#			has_ethic = ethic_authoritarian
+#		}
+#		modifier = {
+#			factor = 3
+#			has_ethic = ethic_fanatic_authoritarian
+#		}
 		modifier = {
 			factor = 0
 			is_egalitarian = yes
@@ -1494,6 +1501,9 @@ relay_network_stability = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
@@ -1546,6 +1556,9 @@ relay_network_movement = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
@@ -1581,10 +1594,10 @@ relay_network_movement = {
 
 	ai_weight = {
 		weight = 0
-		modifier = {
-			weight = @EdictMedPrio
-			has_monthly_income = { resource = volatile_motes value > 5 }
-		}
+#		modifier = {
+#			weight = @EdictMedPrio
+#			has_monthly_income = { resource = volatile_motes value > 5 }
+#		}
 	}
 }
 
@@ -1599,6 +1612,9 @@ relay_network_amenities = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
@@ -1656,6 +1672,9 @@ relay_network_amenities_gestalt = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}

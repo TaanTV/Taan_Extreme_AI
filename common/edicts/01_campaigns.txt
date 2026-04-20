@@ -420,6 +420,7 @@ war_drone_campaign = {
 		category = campaigns
 		cost = {
 			trigger = {
+				is_ai = no
 				is_lithoid_or_infernal_empire = no
 			}
 			food = @hiveFood
@@ -427,6 +428,7 @@ war_drone_campaign = {
 		}
 		cost = {
 			trigger = {
+				is_ai = no
 				is_lithoid_empire = yes
 			}
 			minerals = @hiveFood
@@ -434,6 +436,7 @@ war_drone_campaign = {
 		}
 		cost = {
 			trigger = {
+				is_ai = no
 				is_infernal_empire = yes
 			}
 			alloys = @infernalAlloys
@@ -441,6 +444,7 @@ war_drone_campaign = {
 		}
 		upkeep = {
 			trigger = {
+				is_ai = no
 				is_lithoid_or_infernal_empire = no
 			}
 			food = @hiveFood
@@ -448,6 +452,7 @@ war_drone_campaign = {
 		}
 		upkeep = {
 			trigger = {
+				is_ai = no
 				is_lithoid_empire = yes
 			}
 			minerals = @hiveFood
@@ -455,6 +460,7 @@ war_drone_campaign = {
 		}
 		upkeep = {
 			trigger = {
+				is_ai = no
 				is_infernal_empire = yes
 			}
 			alloys = @infernalAlloys
@@ -473,7 +479,7 @@ war_drone_campaign = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 10000 # add
 		modifier = {
 			weight = @EdictMedPrio
 			is_at_war = yes
@@ -649,10 +655,16 @@ shield_gases = {
 	resources = {
 		category = ship_edicts
 		cost = {
+            trigger = {
+                is_ai = no
+            }
 			exotic_gases = 1
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			exotic_gases = 1
 			multiplier = value:edict_size_effect
 		}
@@ -673,9 +685,9 @@ shield_gases = {
 	ai_weight = {
 		weight = 0
 		modifier = {
-			weight = @EdictMedPrio
+			weight = 100000000 # add @EdictMedPrio
 			is_at_war = yes
-			has_resource = { type = exotic_gases amount > 100 }
+			has_resource = { type = exotic_gases amount > 1 } # add 100
 		}
 	}
 }
@@ -766,10 +778,16 @@ motes_kinetic = {
 	resources = {
 		category = ship_edicts
 		cost = {
+            trigger = {
+                is_ai = no
+            }
 			volatile_motes = 1
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			volatile_motes = 1
 			multiplier = value:edict_size_effect
 		}
@@ -789,9 +807,9 @@ motes_kinetic = {
 	ai_weight = {
 		weight = 0
 		modifier = {
-			weight = @EdictHighPrio
+			weight = 100000000 # add @EdictHighPrio
 			is_at_war = yes
-			has_resource = { type = volatile_motes amount > 100 }
+			has_resource = { type = volatile_motes amount > 1 } # add 100
 		}
 	}
 }
@@ -802,10 +820,16 @@ motes_explosives = {
 	resources = {
 		category = ship_edicts
 		cost = {
+            trigger = {
+                is_ai = no
+            }
 			volatile_motes = 1
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			volatile_motes = 1
 			multiplier = value:edict_size_effect
 		}
@@ -822,9 +846,17 @@ motes_explosives = {
 		weapon_type_explosive_weapon_damage_mult = 0.25
 	}
 
-	ai_weight = {
-		weight = 0
-	}
+#	ai_weight = {
+#		weight = 0 #
+#	}
+    ai_weight = {
+        weight = 0
+        modifier = {
+            weight = 100000000  # add
+            is_at_war = yes
+            has_resource = { type = volatile_motes amount >= 1 }  # 1
+        }
+    }
 }
 
 motes_armor = {
@@ -835,10 +867,16 @@ motes_armor = {
 	resources = {
 		category = ship_edicts
 		cost = {
+            trigger = {
+                is_ai = no
+            }
 			volatile_motes = 1
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			volatile_motes = 1
 			multiplier = value:edict_size_effect
 		}
@@ -859,9 +897,9 @@ motes_armor = {
 	ai_weight = {
 		weight = 0
 		modifier = {
-			weight = @EdictMedPrio
+			weight = 100000000# add @EdictMedPrio
 			is_at_war = yes
-			has_resource = { type = volatile_motes amount > 100 }
+			has_resource = { type = volatile_motes amount > 1 } # add 100
 		}
 	}
 }
@@ -911,10 +949,16 @@ crystal_focus = {
 	resources = {
 		category = ship_edicts
 		cost = {
+            trigger = {
+                is_ai = no
+            }
 			rare_crystals = 1
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			rare_crystals = 1
 			multiplier = value:edict_size_effect
 		}
@@ -934,9 +978,9 @@ crystal_focus = {
 	ai_weight = {
 		weight = 0
 		modifier = {
-			weight = @EdictHighPrio
+			weight = 100000000 # add @EdictHighPrio
 			is_at_war = yes
-			has_resource = { type = rare_crystals amount > 100 }
+			has_resource = { type = rare_crystals amount > 1 } # add 100
 		}
 	}
 }
@@ -1060,6 +1104,9 @@ living_metal_construction = {
 	resources = {
 		category = rare_edicts
 		cost = {
+            trigger = {
+                is_ai = no
+            }
 			sr_living_metal = 0.5
 			multiplier = value:edict_size_effect
 		}
@@ -1071,6 +1118,9 @@ living_metal_construction = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			sr_living_metal = 0.5
 			multiplier = value:edict_size_effect
 		}
@@ -1097,7 +1147,7 @@ living_metal_construction = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 10000 # add 0
 		modifier = {
 			weight = @EdictHighPrio
 			count_owned_megastructure = {
