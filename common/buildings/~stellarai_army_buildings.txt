@@ -59,9 +59,6 @@ building_stronghold = {
 	upgrades = {
 		building_fortress
 	}
-	ai_weight = {
-        factor = 0
-    }
 
 	#ai_weight_coefficient = 0.1
 

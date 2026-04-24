@@ -69,7 +69,7 @@ advanced_economy_plan = {
 		}
 
 		income = {
-			food = 50
+			food = @economic_plan_advanced_scaling_food_bioship_target
 		}
 	}
 	

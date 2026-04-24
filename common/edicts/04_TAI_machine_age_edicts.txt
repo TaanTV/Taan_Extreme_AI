@@ -766,6 +766,9 @@ nanotech_naval_augmentation = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			nanites = 5
 			multiplier = value:edict_size_effect
 		}
@@ -783,7 +786,14 @@ nanotech_naval_augmentation = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 0  # 0
+		modifier = {
+			weight = 100000  # add
+			has_monthly_income = {
+				resource = nanites
+				value > 4
+			}
+		}
 	}
 }
 
@@ -798,6 +808,9 @@ nanotech_alloy_augmentation = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			nanites = 5
 			multiplier = value:edict_size_effect
 		}
@@ -816,7 +829,14 @@ nanotech_alloy_augmentation = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 0  # 0
+		modifier = {
+			weight = 100000  # add 0
+			has_monthly_income = {
+				resource = nanites
+				value > 4
+			}
+		}
 	}
 }
 
@@ -831,6 +851,9 @@ nanotech_energy_augmentation = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			nanites = 5
 			multiplier = value:edict_size_effect
 		}
@@ -849,6 +872,13 @@ nanotech_energy_augmentation = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 0  # 0
+		modifier = {
+			weight = 100000  # add 0
+			has_monthly_income = {
+				resource = nanites
+				value > 4
+			}
+		}
 	}
 }

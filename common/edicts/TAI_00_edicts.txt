@@ -89,7 +89,7 @@ fortify_the_border = {
 			factor = 0
 			NOT = { has_country_flag = has_encountered_other_empire }
 		}
-        modifier = {shield_gases
+        modifier = {
             weight = @EdictHighPrio  # High
             years_passed >= 25  # prio 25 years
         }
@@ -2117,6 +2117,9 @@ astral_binding = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			astral_threads = 25
 			multiplier = value:edict_size_effect
 		}
@@ -2139,7 +2142,7 @@ astral_binding = {
 		pop_bonus_workforce_mult = 0.05
 	}
 	ai_weight = {
-		weight = @EdictHighPrio
+		weight = 10000000 # add @EdictHighPrio
 	}
 }
 
@@ -2154,6 +2157,9 @@ astral_shielding = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			astral_threads = 10
 			multiplier = value:edict_size_effect
 		}
@@ -2177,7 +2183,11 @@ astral_shielding = {
 		ship_shield_hardening_add = 0.25
 	}
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = 0  # add @EdictMedPrio
+		modifier = {
+			weight = 1000000  # add
+			is_at_war = yes
+		}
 	}
 }
 
@@ -2192,6 +2202,9 @@ dimensional_artificing = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			astral_threads = 10
 			multiplier = value:edict_size_effect
 		}
@@ -2216,6 +2229,9 @@ dimensional_artificing = {
 
 	modifier = {
 		custom_tooltip = edict_dimensional_artificing_tooltip
+	}
+	ai_weight = {
+		weight = 1000000 # add
 	}
 }
 

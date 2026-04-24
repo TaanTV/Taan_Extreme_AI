@@ -1168,6 +1168,9 @@ nanite_actuators = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			nanites = 2
 			multiplier = value:edict_size_effect
 		}
@@ -1186,7 +1189,14 @@ nanite_actuators = {
 	}
 
 	ai_weight = {
-		weight = @EdictHighPrio
+		weight = 0  # add
+		modifier = {
+			weight = 100000  # add > 4
+			has_monthly_income = {
+				resource = nanites
+				value > 4
+			}
+		}
 	}
 }
 

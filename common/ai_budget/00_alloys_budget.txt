@@ -184,7 +184,7 @@ alloys_expenditure_ships = {
 		base = 0
 
 		modifier = {
-			add = 3
+			add = @ai_ship_budget_desired_min_per_year
 			country_uses_bio_ships = no
 		}
 
@@ -399,7 +399,58 @@ alloys_expenditure_starbases = {
 		}
 	}
 	desired_max = {
-		base = 1100
+		base = 800
+		modifier = {
+			# Allow saving enough for a Starhold (1000 alloys)
+			add = 500
+			country_uses_bio_ships = no
+			has_technology = tech_starbase_3
+			any_owned_starbase = {
+				has_starbase_size = starbase_starport
+				can_be_upgraded = yes
+			}
+		}
+		# Bioship Starhold costs 500 alloys - base 500 is sufficient, no add needed
+		modifier = {
+			# Allow saving enough for a Starfortress (2500 alloys)
+			add = 2000
+			country_uses_bio_ships = no
+			has_technology = tech_starbase_4
+			any_owned_starbase = {
+				has_starbase_size = starbase_starhold
+				can_be_upgraded = yes
+			}
+		}
+		modifier = {
+			# Allow saving enough for a Bioship Starfortress (1250 alloys)
+			add = 750
+			country_uses_bio_ships = yes
+			has_technology = tech_starbase_4
+			any_owned_starbase = {
+				has_starbase_size = starbase_starhold
+				can_be_upgraded = yes
+			}
+		}
+		modifier = {
+			# Allow saving enough for a Citadel (5000 alloys)
+			add = 4500
+			country_uses_bio_ships = no
+			has_technology = tech_starbase_5
+			any_owned_starbase = {
+				has_starbase_size = starbase_starfortress
+				can_be_upgraded = yes
+			}
+		}
+		modifier = {
+			# Allow saving enough for a Bioship Citadel (2500 alloys)
+			add = 2000
+			country_uses_bio_ships = yes
+			has_technology = tech_starbase_5
+			any_owned_starbase = {
+				has_starbase_size = starbase_starfortress
+				can_be_upgraded = yes
+			}
+		}
 		modifier = {
 			add = 5000
 			has_ascension_perk = ap_cosmogenesis
@@ -527,31 +578,11 @@ alloys_expenditure_colonies_infernal_expand = {
 	}
 
 	desired_min = {
-		base = 0
-		modifier = {
-			add = @colony_cost_base
-			is_hive_empire = no
-		}
-		modifier = {
-			add = @colony_cost_high
-			OR = {
-				is_hive_empire = yes
-			}
-		}
+		base = @colony_cost_low # All infernal colony ships cost 100 alloys regardless of hive status
 	}
 
 	desired_max = {
-		base = 0
-		modifier = {
-			add = @colony_cost_base_max
-			is_hive_empire = no
-		}
-		modifier = {
-			add = @colony_cost_high_max
-			OR = {
-				is_hive_empire = yes
-			}
-		}
+		base = @colony_cost_low_max
 	}
 }
 alloys_expenditure_colonies_expand = {
@@ -569,10 +600,19 @@ alloys_expenditure_colonies_expand = {
 			AND = {
 				is_lithoid_empire = no
 				is_infernal_empire = no
-				has_resource = { type = food amount > 400 }
 				has_monthly_income = {
 					resource = food
 					value > 0
+				}
+				OR = {
+					AND = {
+						country_uses_bio_ships = no
+						has_resource = { type = food amount > 400 }
+					}
+					AND = {
+						country_uses_bio_ships = yes
+						has_resource = { type = food amount > 600 }
+					}
 				}
 			}
 			AND = {
@@ -591,15 +631,7 @@ alloys_expenditure_colonies_expand = {
 					value > 0
 				}
 			}
-			AND = {
-				is_infernal_empire = yes
-				has_resource = { type = alloys amount > 400 }
-				has_monthly_income = {
-					resource = alloys
-					value > 0
-				}
 			}
-		}
 	}
 
 	weight = {
