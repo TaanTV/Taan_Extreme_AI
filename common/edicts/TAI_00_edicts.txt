@@ -2438,6 +2438,9 @@ modular_growth_compounds = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			sr_living_metal = 5
 			multiplier = value:edict_size_effect
 		}
@@ -2447,16 +2450,12 @@ modular_growth_compounds = {
 		founder_species_growth_mult = @inf_modular_growth
 	}
 	ai_weight = {
-		weight = @EdictHighPrio
+		weight = 0 # add @EdictHighPrio
 		modifier = {
-			factor = 0
+			add = 100000  # add
 			resource_income_compare = {
 				resource = sr_living_metal
-				value < 50
-			}
-			resource_stockpile_compare = {
-				resource = sr_living_metal
-				value < 500
+				value > 2
 			}
 		}
 	}

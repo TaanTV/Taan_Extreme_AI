@@ -207,6 +207,9 @@ galactic_dowsing = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			unity = @Edict2Cost
 			multiplier = value:edict_size_effect
 		}
@@ -226,6 +229,9 @@ galactic_dowsing = {
 		is_superstitious_beliefs_empire = yes
 		is_gestalt = no
 	}
+    ai_weight = {
+        weight = 10000
+    }
 }
 
 galactic_dowsing_gestalt = {
@@ -239,6 +245,9 @@ galactic_dowsing_gestalt = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			unity = @Edict2Cost
 			multiplier = value:edict_size_effect
 		}
@@ -258,6 +267,9 @@ galactic_dowsing_gestalt = {
 		is_superstitious_beliefs_empire = yes
 		is_gestalt = yes
 	}
+    ai_weight = {
+        weight = 10000
+    }
 }
 
 # End of the Cycle
