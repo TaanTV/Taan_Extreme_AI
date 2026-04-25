@@ -35,7 +35,7 @@ scientific_revolution = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 100000 # add 1
 	}
 }
 
@@ -68,7 +68,7 @@ scientific_revolution_wilderness = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 100000 # add 1
 	}
 }
 
@@ -85,6 +85,9 @@ desperate_measures = {
 		}
 
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = @ambitionUpkeep
 			multiplier = value:edict_size_effect
 		}
@@ -102,7 +105,7 @@ desperate_measures = {
 	ai_weight = {
 		weight = 0
 		modifier = {
-			weight = 1
+			weight = 10000000 # add
 			is_at_war = yes
 		}
 	}
@@ -121,6 +124,9 @@ fortress_proclamation = {
 		}
 
 		upkeep = {
+            trigger = {
+                is_ai = no
+            }
 			unity = @ambitionUpkeep
 			multiplier = value:edict_size_effect
 		}
@@ -136,7 +142,7 @@ fortress_proclamation = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 1000 # add 0
 	}
 }
 
@@ -153,6 +159,9 @@ architectural_renaissance = {
 		}
 
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			unity = @ambitionUpkeep
 			multiplier = value:edict_size_effect
 		}
@@ -173,7 +182,7 @@ architectural_renaissance = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 100000 # add 1
 	}
 }
 
@@ -254,6 +263,9 @@ grand_fleet = {
 		}
 
 		upkeep = {
+            trigger = {
+                is_ai = no # add
+            }
 			unity = @ambitionUpkeep
 			multiplier = value:edict_size_effect
 		}
@@ -268,13 +280,9 @@ grand_fleet = {
 		has_technology = tech_ascension_theory
 	}
 
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 1
-			is_at_war = yes
-		}
-	}
+    ai_weight = {
+        weight = 100 # add
+    }
 }
 
 will_to_power = {
@@ -302,12 +310,24 @@ will_to_power = {
 	potential = {
 		has_technology = tech_ascension_theory
 	}
-
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 1
-			is_at_war = yes
-		}
-	}
+    ai_weight = {
+        weight = 0
+        modifier = {
+            weight = 100
+            has_monthly_income = {
+                resource = influence
+                value < 3
+            }
+            has_resource = {
+                type = influence
+                amount >= 200
+            }
+            NOT = {
+                has_resource = {
+                    type = influence
+                    amount >= 800
+                }
+            }
+        }
+    }
 }

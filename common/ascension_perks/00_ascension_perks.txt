@@ -1378,7 +1378,7 @@ ap_one_vision = {
 	}
 
 	ai_weight = {
-		factor = 0 # 10
+		factor = 1 # 10
 		modifier = {
 			factor = 2
 			has_ethic = ethic_authoritarian

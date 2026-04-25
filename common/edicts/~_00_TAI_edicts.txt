@@ -299,6 +299,9 @@ enhanced_surveillance = {
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
+			trigger = {
+				is_ai = no
+			}
 			unity = @Edict2Cost
 			multiplier = value:edict_size_effect
 		}
@@ -321,7 +324,7 @@ enhanced_surveillance = {
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = 1000 # add @EdictMedPrio
 		modifier = {
 			factor = 2
 			has_ethic = ethic_authoritarian
@@ -330,10 +333,10 @@ enhanced_surveillance = {
 			factor = 3
 			has_ethic = ethic_fanatic_authoritarian
 		}
-		modifier = {
-			factor = 0
-			is_egalitarian = yes
-		}
+#		modifier = {
+#			factor = 0
+#			is_egalitarian = yes
+#		}
 	}
 }
 

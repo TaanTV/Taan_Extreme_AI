@@ -3392,7 +3392,7 @@ drone_policy = {
 		modifier = {}
 
 		AI_weight = {
-			factor = 1
+			factor = 0 # add 1
 		}
 	}
 
@@ -3403,10 +3403,14 @@ drone_policy = {
 			planet_jobs_simple_drone_produces_mult = 0.2
 			planet_jobs_complex_drone_produces_mult = -0.2
 		}
-
-		AI_weight = {
-			factor = 0
-		}
+        AI_weight = {
+            factor = 1000 # add 0
+            
+            modifier = {
+                factor = 0 # add
+                years_passed > 10 # add only first 10 years
+            }
+        }
 	}
 
 	option = {
@@ -3417,10 +3421,15 @@ drone_policy = {
 			planet_jobs_complex_drone_produces_mult = 0.2
 		}
 
-		AI_weight = {
-			factor = 0
-		}
-	}
+        AI_weight = {
+            factor = 1 # add
+            
+            modifier = {
+                factor = 1000000 # add
+                years_passed > 10
+            }
+        }
+    }
 }
 
 symbiont_policy = {

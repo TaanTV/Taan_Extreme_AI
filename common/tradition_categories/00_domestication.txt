@@ -24,10 +24,10 @@ tradition_domestication = {
 				value >= 40
 			}
 		}
-		modifier = {
-			add = 10
-			num_vivarium_slots = value:get_vivarium_capacity
-		}
+#		modifier = {
+#			add = 10
+#			num_vivarium_slots = value:get_vivarium_capacity
+#		}
 		modifier = {
 			factor = 5
 			is_beastmasters_empire = yes
