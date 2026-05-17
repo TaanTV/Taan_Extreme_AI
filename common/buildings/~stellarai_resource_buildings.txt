@@ -127,7 +127,7 @@ building_food_processing_facility = {
 	}
 
 	planet_modifier = {
-		planet_farmers_produces_mult = 0.20
+		planet_farmers_food_produces_add = 0.5
 	}
 
 	upgrades = {
@@ -227,8 +227,7 @@ building_food_processing_center = {
 	}
 
 	planet_modifier = {
-		planet_farmers_produces_mult = 0.20
-		planet_farmers_food_produces_add = 2
+		planet_farmers_food_produces_add = 1.0
 	}
 
 	triggered_planet_modifier = {
@@ -236,7 +235,7 @@ building_food_processing_center = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_farmers_food_produces_add = 2
+			planet_farmers_food_produces_add = 0.5
 		}
 	}
 
@@ -258,6 +257,18 @@ building_food_processing_center = {
 
 	ai_weight = {
 		factor = @food_reseource_building_tier2_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = exotic_gases
+			MIN_INCOME = @b3_rare_upkeep
+			MIN_STOCKPILE = 10
+			EARLY_FACTOR = 0.35
+			EARLY_YEARS = 80
+			EARLY_STOCKPILE = 25
+			SURPLUS_FACTOR = 1.08
+			SURPLUS_INCOME = 4
+			SURPLUS_STOCKPILE = 45
+		}
 	}
 }
 
@@ -364,6 +375,18 @@ building_farming_districts_2 = {
 
 	ai_weight = {
 		factor = @food_reseource_building_tier2_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = exotic_gases
+			MIN_INCOME = @b2_rare_upkeep
+			MIN_STOCKPILE = 8
+			EARLY_FACTOR = 0.25
+			EARLY_YEARS = 61
+			EARLY_STOCKPILE = 25
+			SURPLUS_FACTOR = 1.08
+			SURPLUS_INCOME = 4
+			SURPLUS_STOCKPILE = 45
+		}
 	}
 }
 
@@ -418,6 +441,18 @@ building_farming_districts_3 = {
 
 	ai_weight = {
 		factor = @food_reseource_building_tier3_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = exotic_gases
+			MIN_INCOME = @b3_rare_upkeep
+			MIN_STOCKPILE = 12
+			EARLY_FACTOR = 0.15
+			EARLY_YEARS = 100
+			EARLY_STOCKPILE = 40
+			SURPLUS_FACTOR = 1.10
+			SURPLUS_INCOME = 6
+			SURPLUS_STOCKPILE = 70
+		}
 	}
 }
 
@@ -468,6 +503,18 @@ building_farming_districts_4 = {
 
 	ai_weight = {
 		factor = @food_reseource_building_tier4_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = exotic_gases
+			MIN_INCOME = @b3_rare_upkeep
+			MIN_STOCKPILE = 14
+			EARLY_FACTOR = 0.15
+			EARLY_YEARS = 100
+			EARLY_STOCKPILE = 45
+			SURPLUS_FACTOR = 1.10
+			SURPLUS_INCOME = 6
+			SURPLUS_STOCKPILE = 70
+		}
 	}
 }
 
@@ -504,12 +551,12 @@ building_baol_organic_plant = {
 		script = jobs/farmers_add
 		AMOUNT = @building_static_jobs
 	}
-	# for exceptions to the above (i.e. Wilderness):
+		# for exceptions to the above (i.e. Wilderness):
 	inline_script = {
 		script = buildings/planet_job_resource_produces_add
 		JOB = farmers
 		RESOURCE = food
-		AMOUNT = 1
+		AMOUNT = 0.25
 	}
 
 	# Additional farmer output (non-Archaeoengineering)
@@ -519,7 +566,7 @@ building_baol_organic_plant = {
 				country_uses_consumer_goods = yes
 			}
 		}
-		planet_farmers_consumer_goods_produces_add = 0.5
+		planet_farmers_consumer_goods_produces_add = 0.10
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -527,7 +574,7 @@ building_baol_organic_plant = {
 				country_uses_consumer_goods = no
 			}
 		}
-		planet_farmers_energy_produces_add = 1
+		planet_farmers_energy_produces_add = 0.25
 	}
 
 	# Additional farmer output (with Archaeoengineering)
@@ -538,7 +585,7 @@ building_baol_organic_plant = {
 				has_ascension_perk = ap_archaeoengineers
 			}
 		}
-		planet_farmers_consumer_goods_produces_add = 0.5
+		planet_farmers_consumer_goods_produces_add = 0.125
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -547,7 +594,7 @@ building_baol_organic_plant = {
 				has_ascension_perk = ap_archaeoengineers
 			}
 		}
-		planet_farmers_energy_produces_add = 1
+		planet_farmers_energy_produces_add = 0.25
 	}
 
 	resources = {
@@ -720,7 +767,7 @@ building_mineral_purification_plant = {
 	}
 
 	planet_modifier = {
-		planet_miners_produces_mult = 0.20
+		planet_miners_minerals_produces_add = 0.5
 	}
 
 	upgrades = {
@@ -833,16 +880,12 @@ building_mineral_purification_hub = {
 		}
 	}
 
-	planet_modifier = {
-		planet_miners_produces_mult = 0.20
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 2
+			planet_miners_minerals_produces_add = 1.0
 		}
 	}
 
@@ -851,8 +894,8 @@ building_mineral_purification_hub = {
 			is_planet_class = pc_shattered_ring_habitable
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 1
-			planet_miners_alloys_produces_add = 0.5
+			planet_miners_minerals_produces_add = 0.5
+			planet_miners_alloys_produces_add = 0.2
 		}
 	}
 
@@ -861,7 +904,7 @@ building_mineral_purification_hub = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 2
+			planet_miners_minerals_produces_add = 0.5
 		}
 	}
 	prerequisites = {
@@ -893,6 +936,18 @@ building_mineral_purification_hub = {
 
 	ai_weight = {
 		factor = @minerals_reseource_building_tier3_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = volatile_motes
+			MIN_INCOME = @b3_rare_upkeep
+			MIN_STOCKPILE = 10
+			EARLY_FACTOR = 0.35
+			EARLY_YEARS = 80
+			EARLY_STOCKPILE = 25
+			SURPLUS_FACTOR = 1.08
+			SURPLUS_INCOME = 4
+			SURPLUS_STOCKPILE = 45
+		}
 	}
 }
 
@@ -999,6 +1054,18 @@ building_mining_districts_2 = {
 
 	ai_weight = {
 		factor = @minerals_reseource_building_tier2_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = volatile_motes
+			MIN_INCOME = @b2_rare_upkeep
+			MIN_STOCKPILE = 8
+			EARLY_FACTOR = 0.25
+			EARLY_YEARS = 61
+			EARLY_STOCKPILE = 25
+			SURPLUS_FACTOR = 1.08
+			SURPLUS_INCOME = 4
+			SURPLUS_STOCKPILE = 45
+		}
 	}
 }
 
@@ -1053,6 +1120,18 @@ building_mining_districts_3 = {
 
 	ai_weight = {
 		factor = @minerals_reseource_building_tier3_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = volatile_motes
+			MIN_INCOME = @b3_rare_upkeep
+			MIN_STOCKPILE = 10
+			EARLY_FACTOR = 0.35
+			EARLY_YEARS = 80
+			EARLY_STOCKPILE = 25
+			SURPLUS_FACTOR = 1.08
+			SURPLUS_INCOME = 4
+			SURPLUS_STOCKPILE = 45
+		}
 	}
 }
 
@@ -1103,6 +1182,18 @@ building_mining_districts_4 = {
 
 	ai_weight = {
 		factor = @minerals_reseource_building_tier4_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = volatile_motes
+			MIN_INCOME = @b4_rare_upkeep
+			MIN_STOCKPILE = 10
+			EARLY_FACTOR = 0.35
+			EARLY_YEARS = 80
+			EARLY_STOCKPILE = 25
+			SURPLUS_FACTOR = 1.08
+			SURPLUS_INCOME = 4
+			SURPLUS_STOCKPILE = 45
+		}
 	}
 }
 
@@ -1224,7 +1315,7 @@ building_energy_grid = {
 	}
 
 	planet_modifier = {
-		planet_technician_produces_mult = 0.20
+		planet_technician_energy_produces_add = 0.5
 	}
 
 	prerequisites = {
@@ -1321,8 +1412,7 @@ building_energy_nexus = {
 	}
 
 	planet_modifier = {
-		planet_technician_produces_mult = 0.20
-		planet_technician_energy_produces_add = 2
+		planet_technician_energy_produces_add = 1.0
 	}
 
 	triggered_planet_modifier = {
@@ -1330,7 +1420,7 @@ building_energy_nexus = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_technician_energy_produces_add = 2
+			planet_technician_energy_produces_add = 0.5
 		}
 	}
 
@@ -1352,6 +1442,18 @@ building_energy_nexus = {
 
 	ai_weight = {
 		factor = @energy_reseource_building_tier3_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = rare_crystals
+			MIN_INCOME = @b3_rare_upkeep
+			MIN_STOCKPILE = 10
+			EARLY_FACTOR = 0.35
+			EARLY_YEARS = 80
+			EARLY_STOCKPILE = 25
+			SURPLUS_FACTOR = 1.08
+			SURPLUS_INCOME = 4
+			SURPLUS_STOCKPILE = 45
+		}
 	}
 }
 
@@ -1459,7 +1561,20 @@ building_generator_districts_2 = {
 
 	ai_weight = {
 		factor = @energy_reseource_building_tier2_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = rare_crystals
+			MIN_INCOME = @b2_rare_upkeep
+			MIN_STOCKPILE = 8
+			EARLY_FACTOR = 0.25
+			EARLY_YEARS = 61
+			EARLY_STOCKPILE = 25
+			SURPLUS_FACTOR = 1.08
+			SURPLUS_INCOME = 4
+			SURPLUS_STOCKPILE = 45
+		}
 	}
+	
 }
 
 building_generator_districts_3 = {
@@ -1513,7 +1628,20 @@ building_generator_districts_3 = {
 
 	ai_weight = {
 		factor = @energy_reseource_building_tier3_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = rare_crystals
+			MIN_INCOME = @b3_rare_upkeep
+			MIN_STOCKPILE = 10
+			EARLY_FACTOR = 0.35
+			EARLY_YEARS = 80
+			EARLY_STOCKPILE = 25
+			SURPLUS_FACTOR = 1.08
+			SURPLUS_INCOME = 4
+			SURPLUS_STOCKPILE = 45
+		}
 	}
+
 }
 
 building_generator_districts_4 = {
@@ -1563,6 +1691,18 @@ building_generator_districts_4 = {
 
 	ai_weight = {
 		factor = @energy_reseource_building_tier4_factor
+		inline_script = {
+			script = stellarai/rare_resource_guard_modifiers
+			STRATEGIC_RESOURCE = rare_crystals
+			MIN_INCOME = @b4_rare_upkeep
+			MIN_STOCKPILE = 10
+			EARLY_FACTOR = 0.35
+			EARLY_YEARS = 80
+			EARLY_STOCKPILE = 25
+			SURPLUS_FACTOR = 1.08
+			SURPLUS_INCOME = 4
+			SURPLUS_STOCKPILE = 45
+		}
 	}
 }
 
@@ -1632,6 +1772,16 @@ building_resource_silo = {
 			}
 		}
 		country_resource_max_add = 5000
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_machine_obsessional_directive
+			}
+		}
+		country_resource_max_consumer_goods_add = 5000
 	}
 
 	prerequisites = {
@@ -1768,7 +1918,7 @@ building_bio_reactor_2 = {
 	planet_modifier = {
 		planet_farmers_food_produces_add = -3
 		planet_farmers_energy_produces_add = 2
-		planet_farmers_exotic_gases_produces_add = 0.5
+		planet_farmers_exotic_gases_produces_add = 0.1
 	}
 
 	prerequisites = {

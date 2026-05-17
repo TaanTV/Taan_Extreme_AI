@@ -31,10 +31,20 @@ advanced_economy_plan = {
 		scaling = yes
 		set_name = "Advanced Naval Cap"
 		potential = {
-			used_naval_capacity_percent > 0.90
+			  OR = {
+				used_naval_capacity_percent > 0.75
+				AND = {
+					has_technology = tech_cruisers
+					used_naval_capacity_percent > 0.65
+				}
+				AND = {
+					has_technology = tech_battleships
+					used_naval_capacity_percent > 0.60
+				}
+			}
 		}
 
-		naval_cap = 50
+		naval_cap = 200
 	}
 	
 	subplan = {
@@ -59,7 +69,7 @@ advanced_economy_plan = {
 		}
 
 		income = {
-			food = 50
+			food = @economic_plan_advanced_scaling_food_bioship_target
 		}
 	}
 	

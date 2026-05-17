@@ -1,0 +1,96 @@
+icon = GFX_district_specialization_food
+base_buildtime = @zone_buildtime
+potential = { # planet scope
+	if = {
+		limit = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+		}
+		is_wet = no
+		inline_script = {
+			script = stellarai/invalid_colony_type_potential
+			PLANET_FLAG = stellarai_invalid_for_farming_to_build
+		}	
+	}
+	else = {
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_wilderness_empire = no
+			}
+			inline_script = {
+				script = stellarai/invalid_colony_type_potential
+				PLANET_FLAG = stellarai_invalid_for_farming_to_build
+			}
+		}
+	}
+}
+
+unlock = { 
+	if = {
+		limit = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+		}
+		is_wet = no
+		inline_script = {
+			script = stellarai/invalid_colony_type_potential
+			PLANET_FLAG = stellarai_invalid_for_farming_to_build
+		}
+		
+	}
+	else = {
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_wilderness_empire = no
+			}
+			inline_script = {
+				script = stellarai/invalid_colony_type_potential
+				PLANET_FLAG = stellarai_invalid_for_farming_to_build
+			}
+		}
+	}
+}
+resources = {
+	category = planet_zones
+	cost = {
+		minerals = @zone_cost
+	}
+}
+
+inline_script = {
+	script = jobs/zone_farmers_add
+	AMOUNT = $AMOUNT$
+}
+
+included_building_sets = {
+	farming
+	hydroponics
+	farming_automation
+	fallen_empire_farming
+}
+
+convert_to = {
+	zone_food
+	zone_food_ring_world
+	zone_food_hive
+}
+
+planet_modifier = {
+	zone_building_slots_add = 3
+}
+
+ai_resource_production = {
+	food = 10
+
+	trigger = {
+		OR = {
+		  num_districts = { type = district_farming value > 0 }
+          num_zones = { type = zone_food value > 0 }
+		}
+	}
+}
+
+ai_priority = @ai_zone_priority_food
+ai_weight_coefficient = @stellarai_food_zone_coefficient

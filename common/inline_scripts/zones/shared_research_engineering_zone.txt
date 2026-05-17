@@ -7,6 +7,10 @@ potential = { # planet scope
 			is_wilderness_empire = no
 		}
 	}
+	inline_script = {
+		script = stellarai/invalid_colony_type_potential
+		PLANET_FLAG = stellarai_invalid_for_research_to_build
+	}
 }
 
 unlock = { # planet scope
@@ -14,6 +18,10 @@ unlock = { # planet scope
 		exists = owner
 		owner = {
 			is_wilderness_empire = no
+		}
+		inline_script = {
+			script = stellarai/invalid_colony_type_potential
+			PLANET_FLAG = stellarai_invalid_for_research_to_build
 		}
 	}
 }
@@ -26,7 +34,7 @@ resources = {
 }
 
 included_building_sets = {
-	physics
+	engineering
 	research
 	urban_automation
 	origin
@@ -39,6 +47,15 @@ inline_script = {
 
 planet_modifier = {
 	zone_building_slots_add = 3
+}
+
+ai_resource_production = {
+	engineering_research = 15
+
+	trigger = {
+		has_any_research_zone = yes
+		NOT = { has_planet_flag = stellarai_invalid_for_research_to_build }
+	}
 }
 
 ai_weight_coefficient = @ai_zone_priority_special_research_coefficient

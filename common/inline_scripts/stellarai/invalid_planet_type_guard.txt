@@ -1,0 +1,4 @@
+modifier = {
+	factor = 0.01
+	has_planet_flag = $PLANET_FLAG$
+}

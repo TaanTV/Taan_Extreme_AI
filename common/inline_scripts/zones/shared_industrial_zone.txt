@@ -5,6 +5,10 @@ potential = { # planet scope
 	owner = {
 		country_uses_consumer_goods = yes
 	}
+	inline_script = {
+		script = stellarai/invalid_colony_type_potential
+		PLANET_FLAG = stellarai_invalid_for_industry_to_build
+	}
 }
 
 unlock = { # planet scope
@@ -12,6 +16,10 @@ unlock = { # planet scope
 		exists = owner
 		owner = {
 			country_uses_consumer_goods = yes
+		}
+		inline_script = {
+			script = stellarai/invalid_colony_type_potential
+			PLANET_FLAG = stellarai_invalid_for_industry_to_build
 		}
 	}
 }
@@ -49,8 +57,9 @@ ai_resource_production = {
 
 	trigger = {
 		has_any_industrial_zone = yes
+		#NOT = { has_planet_flag = stellarai_invalid_for_industry_to_build }
 	}
 }
 
-ai_weight_coefficient = @ai_zone_priority_industry_coefficient
 ai_priority = @ai_zone_priority_industry
+ai_weight_coefficient = @ai_zone_priority_industry_coefficient

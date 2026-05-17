@@ -1,37 +1,6 @@
-ai_weight = {
-		factor = @research_building_tier2_factor
-		modifier = {
-			factor = @research_building_capital_planet_factor
-			is_capital = yes
-		}
-		modifier = {
-			factor = @research_building_research_planet_factor
-			has_research_designation = yes
-		}
-		modifier = {
-			factor = @research_building_not_research_planet_factor
-			AND = {
-				is_capital = no
-				has_research_designation = no
-			}
-		}
-		modifier = {
-            factor = @danger_of_deficit_modifier_factor
-			owner = {
-				has_monthly_income = {
-					resource = volatile_motes
-					value < @b2_rare_upkeep_guardrail
-				}
-			}
-			
-        }
-		modifier = {
-            factor = @danger_of_deficit_modifier_factor
-			owner = {
-				has_monthly_income = {
-					resource = consumer_goods
-					value < 3
-				}
-			}
-        }
+inline_script = {
+		script = stellarai/specialized_research_building_common_weight
+	    TIER_FACTOR = @research_building_tier2_factor
+		STRATEGIC_RESOURCE = volatile_motes
+		RARE_UPKEEP = @b2_rare_upkeep
 }

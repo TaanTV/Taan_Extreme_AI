@@ -1,0 +1,34 @@
+#modifier = { has_planet_flag = stellarai_research_commitment_soft add = 100 }
+modifier = { has_planet_flag = stellarai_research_commitment_hard factor = 1.8 }
+modifier = { has_planet_flag = stellarai_industry_commitment_hard factor = 0.1 }
+
+modifier = {
+	factor = 0.60
+	owner = { stellarai_machine_energy_emergency = yes }
+}
+
+modifier = {
+	factor = 0.75
+	owner = { stellarai_machine_minerals_emergency = yes }
+}
+
+modifier = {
+	factor = 1.15
+	owner = { stellarai_machine_research_ramp = yes }
+}
+
+modifier = {
+	factor = 0.85
+	owner = { 
+		stellarai_exterminator_war_ramp = yes
+		resource_stockpile_compare = { resource = energy value < 2500 } 
+	}
+}
+
+modifier = {
+	factor = 0.45
+	owner = {
+		has_monthly_income = { resource = energy value < 0 }
+		resource_stockpile_compare = { resource = energy value < 1000 }
+	}
+}

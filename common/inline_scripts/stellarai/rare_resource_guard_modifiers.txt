@@ -1,0 +1,43 @@
+modifier = {
+    factor = 0.01
+    owner = {
+        OR = {
+            has_deficit = $STRATEGIC_RESOURCE$
+            has_monthly_income = {
+                resource = $STRATEGIC_RESOURCE$
+                value < $MIN_INCOME$
+            }
+            resource_stockpile_compare = {
+                resource = $STRATEGIC_RESOURCE$
+                value < $MIN_STOCKPILE$
+            }
+        }
+    }
+}
+
+modifier = {
+    factor = $EARLY_FACTOR$
+    years_passed < $EARLY_YEARS$
+    owner = {
+        resource_stockpile_compare = {
+            resource = $STRATEGIC_RESOURCE$
+            value < $EARLY_STOCKPILE$
+        }
+    }
+}
+
+modifier = {
+    factor = $SURPLUS_FACTOR$
+    owner = {
+        AND = {
+            has_monthly_income = {
+                resource = $STRATEGIC_RESOURCE$
+                value > $SURPLUS_INCOME$
+            }
+            resource_stockpile_compare = {
+                resource = $STRATEGIC_RESOURCE$
+                value >= $SURPLUS_STOCKPILE$
+            }
+        }
+    }
+}
