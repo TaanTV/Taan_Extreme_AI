@@ -34,17 +34,7 @@ endgame_economy_plan = {
 		optional = yes
 		set_name = "Endgame Naval Cap"
 		potential = {
-			OR = {
-				used_naval_capacity_percent > 0.75
-				AND = {
-					has_technology = tech_cruisers
-					used_naval_capacity_percent > 0.65
-				}
-				AND = {
-					has_technology = tech_battleships
-					used_naval_capacity_percent > 0.55
-				}
-			}
+			used_naval_capacity_percent > 0.85
 		}
 
 		naval_cap = 9999 # Max set in defines

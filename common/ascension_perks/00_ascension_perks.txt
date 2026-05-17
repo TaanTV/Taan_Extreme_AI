@@ -1378,7 +1378,7 @@ ap_one_vision = {
 	}
 
 	ai_weight = {
-		factor = 1 # 10
+		factor = 0 # 10
 		modifier = {
 			factor = 2
 			has_ethic = ethic_authoritarian
@@ -1479,17 +1479,36 @@ ap_imperial_prerogative = { # add
 		}
 		is_megacorp = no
 	}
-
 	ai_weight = {
-		factor = 15
-		modifier = {
-			factor = 0
-			num_owned_planets < 2
-		}
 	    modifier = {
-        	add = 10000  # 5+ planet
+	       	add = 10000  # 5+ planet
         	num_owned_planets >= 3
     	}		
+		factor = 0
+		modifier = {
+			add = 1000000
+			num_ascension_perks = 1
+		}
+		modifier = {
+			add = 500000
+			num_ascension_perks >= 2
+			NOT = { has_ascension_perk = ap_imperial_prerogative }
+		}
+		modifier = {
+			factor = 0
+			num_ascension_perks = 0
+		}
+	}
+#	ai_weight = {
+#		factor = 15
+#		modifier = {
+#			factor = 0
+#			num_owned_planets < 2
+#		}
+#	    modifier = {
+#       	add = 10000  # 5+ planet
+#        	num_owned_planets >= 3
+#    	}		
 #		modifier = {
 #			factor = 0.1
 #			num_owned_planets < 7
@@ -1502,7 +1521,7 @@ ap_imperial_prerogative = { # add
 #			factor = 5
 #			num_owned_planets > 40
 #		}
-	}
+#	}
 
 	on_enabled = {
 		run_ai_strategic_data = yes

@@ -50,51 +50,5 @@ advanced_economy_plan = {
 			engineering_research = @stellarai_midgame_economic_plan_advanced_scaling_research_target
 		}
 	}
-
-	subplan = {
-		scaling = yes
-		set_name = "Machine Stellar AI advanced energy support"
-		potential = {
-			is_machine_empire = yes
-			OR = {
-				has_monthly_income = { resource = energy value < 40 }
-				resource_stockpile_compare = { resource = energy value < 4000 }
-			}
-		}
-
-		income = {
-			energy = 40
-		}
-	}
-
-	subplan = {
-		scaling = yes
-		set_name = "Machine Stellar AI advanced severe energy support"
-		potential = {
-			is_machine_empire = yes
-			has_monthly_income = { resource = energy value < 0 }
-			resource_stockpile_compare = { resource = energy value < 1500 }
-		}
-
-		income = {
-			energy = 80
-		}
-	}
-
-	subplan = {
-		scaling = yes
-		set_name = "Determined Exterminator advanced energy support"
-		potential = {
-			has_valid_civic = civic_machine_terminator
-			OR = {
-				has_monthly_income = { resource = energy value < 60 }
-				resource_stockpile_compare = { resource = energy value < 5000 }
-			}
-		}
-
-		income = {
-			energy = 30
-		}
-	}
 	
 }

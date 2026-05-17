@@ -9,7 +9,10 @@ modifier = {
 
 modifier = {
 	add = @shared_weight_add_reserach_medium
-	has_deposit = d_portal_research_zone
+	OR = {
+		has_deposit = d_portal_research_zone
+		has_deposit = d_portal_research_zone_gestalt
+	}
 }
 modifier = {
 	add = @shared_weight_add_reserach_medium
@@ -33,7 +36,6 @@ modifier = {
 		has_deposit = d_central_spire
 	}
 }
-
 # Regular research labs
 complex_trigger_modifier = {
 	trigger = num_buildings
@@ -108,7 +110,7 @@ complex_trigger_modifier = {
 complex_trigger_modifier = {
 	trigger = num_buildings
 	parameters = {
-		type = building_biolab_3
+		type = building_biolab_2
 	}
 	mode = add
 	mult = @shared_weight_mult_reserach_very_high

@@ -1,0 +1,217 @@
+# Rare upkeep settings
+@b2_rare_upkeep_guardrail = 2
+@b3_rare_upkeep_guardrail = 3
+@b4_rare_upkeep_guardrail = 5
+@b5_rare_upkeep_guardrail = 4
+
+@danger_of_deficit_modifier_factor = 0.01
+
+# Economic plans target
+@stellarai_early_economic_plan_research_target = 250
+@stellarai_early_economic_plan_research_focus_target = 100
+@stellarai_early_economic_plan_scaling_research_limit = 500
+@stellarai_early_economic_plan_scaling_research_target = 100
+
+# Re-ignite the AI when spinning its wheels in midgame
+@stellarai_additional_research_economic_plan_scaling_research_limit = 800
+#@stellarai_additional_research_economic_plan_research_target = 1500
+@stellarai_additional_research_economic_plan_scaling_research_target = 100
+
+# Stellarai advanced economy plan
+@stellarai_midgame_economic_plan_advanced_research_target = 375
+@stellarai_midgame_economic_plan_advanced_research_focus_target = 188
+@stellarai_midgame_economic_plan_advanced_scaling_research_limit = 1500
+@stellarai_midgame_economic_plan_advanced_scaling_research_target = 100
+
+# Colony type weights
+@urban_colony_stickiness = 5
+@research_colony_type_stickiness = 10
+@industrial_colony_type_stickiness = 10
+@industrial_forge_colony_type_stickiness = 10
+@bureau_colony_type_stickiness = 5
+@mining_colony_type_stickiness = 8
+@farming_colony_type_stickiness = 8
+@energy_colony_type_stickiness = 10
+@fortress_colony_type_stickiness = 5
+
+@very_low_zones_weight = 5
+@quite_low_zones_weight = 10
+@zone_mining_weight = 100
+@zone_urban_research_additional_weight = 150
+@zone_urban_bereau_additional_weight = 40
+
+# Energy zone conditional
+@zone_energy_conditions_additional_weight = 40
+@zone_energy_available_zones_additional_weight = 40
+
+# Shared weights settings
+@shared_weight_add_reserach_very_high = 30
+@shared_weight_add_reserach_high = 20
+@shared_weight_add_reserach_medium = 15
+@shared_weight_add_reserach_low = 10
+
+@shared_weight_mult_reserach_very_high = 20
+@shared_weight_mult_reserach_high = 15
+@shared_weight_mult_reserach_medium = 10
+
+# Research job weights
+# @custom_specialist_researcher_job_weight = 20
+
+# @ai_research_specialized_production_tier1 = 15
+# @ai_research_specialized_production_tier2 = 30
+# @ai_research_specialized_production_tier3 = 60
+# @ai_research_specialized_production_tier4 = 90
+
+# Research labs additional weight
+@research_lab_building_tier1_additional_ai_weight = 10
+# @research_lab_building_tier2_additional_ai_weight = 499
+# @research_lab_building_tier3_additional_ai_weight = 499
+# @research_lab_building_tier4_additional_ai_weight = 499
+
+# Generic research scripted additional weight
+@research_lab_scripted_tier1_additional_ai_weight = 10
+@research_lab_scripted_tier2_additional_ai_weight = 20
+@research_lab_scripted_tier3_additional_ai_weight = 30
+@research_lab_scripted_tier4_additional_ai_weight = 40
+
+# Specialized research buildings
+@research_building_tier1_additional_ai_weight = 15
+# @research_building_tier2_additional_ai_weight = 500
+# @research_building_tier3_additional_ai_weight = 500
+# @research_building_tier4_additional_ai_weight = 500
+
+# Specialized research buildings
+@research_scripted_tier1_additional_ai_weight = 15
+@research_scripted_tier2_additional_ai_weight = 25
+@research_scripted_tier3_additional_ai_weight = 35
+@research_scripted_tier4_additional_ai_weight = 45
+
+# Special research building scripted additional weight
+@research_scripted_special_tier1_additional_ai_weight = 5
+@research_scripted_special_tier2_additional_ai_weight = 10
+@research_scripted_special_tier3_additional_ai_weight = 15
+@research_scripted_special_tier4_additional_ai_weight = 20
+
+# Research lab and specialized research coefficient values
+@research_lab_tier1_coefficient = 4.0
+@research_lab_tier2_coefficient = 4.5
+@research_lab_tier3_coefficient = 4.5
+@research_lab_tier4_coefficient = 4.5
+
+@research_building_tier1_coefficient = 4.8
+@research_building_tier2_coefficient = 5.0
+@research_building_tier3_coefficient = 5.0
+@research_building_tier4_coefficient = 5.0
+
+# Ai weight factor capital planet
+@research_building_capital_planet_factor = 8
+
+# Ai weight factor research planet
+@research_building_research_planet_factor = 10
+@research_building_not_research_planet_factor = 0.2
+
+# ai weight settings, generic research lab
+# @research_lab_tier1_factor=1.5
+@research_lab_tier2_factor = 1.4
+@research_lab_tier3_factor = 1.5
+
+# ai weight settings, specialized research lab
+# @research_building_tier1_factor=1.6
+@research_building_tier2_factor = 1.5
+@research_building_tier3_factor = 1.6
+
+# Factory factor
+@factory_tier1_factor = 1.05
+@factory_tier2_factor = 1.10
+@factory_tier3_factor = 1.10
+
+# Forge factor
+@forge_tier1_factor = 1.04
+@forge_tier2_factor = 1.08
+@forge_tier3_factor = 1.08
+
+# refinery factor
+@refinery_tier1_factor = 1.1
+@refinery_tier2_factor = 1.1
+@refinery_tier3_factor = 1.1
+
+# Strategic resources factor for mines
+@strategic_resource_building_mine_tier1_factor = 1.05
+@strategic_resource_building_mine_tier2_factor = 1.05
+#@strategic_resource_building_mine_tier3_factor = 1.5
+
+# Strategic resources factor for refineries
+@strategic_resource_building_tier1_factor = 2
+#@strategic_resource_building_tier2_factor = 1.3
+#@strategic_resource_building_tier3_factor = 1.3
+
+# Production ministries etc buildings factor
+@special_resource_building_tier1_factor = 1.2
+@special_resource_building_tier2_factor = 1.3
+@special_resource_building_tier3_factor = 1.3
+
+# Food building ai weight factor
+@food_reseource_building_tier1_factor = 1.08
+@food_reseource_building_tier2_factor = 1.08
+@food_reseource_building_tier3_factor = 1.08
+@food_reseource_building_tier4_factor = 1.08
+
+# Mining ai weight factor
+@minerals_reseource_building_tier1_factor = 1.08
+@minerals_reseource_building_tier2_factor = 1.08
+@minerals_reseource_building_tier3_factor = 1.08
+@minerals_reseource_building_tier4_factor = 1.08
+
+# Energy ai weight factor
+@energy_reseource_building_tier1_factor = 1.08
+@energy_reseource_building_tier2_factor = 1.08
+@energy_reseource_building_tier3_factor = 1.08
+@energy_reseource_building_tier4_factor = 1.08
+
+# Factory and forge coefficient
+@factory_tier1_coefficient = 4.1
+@forge_tier1_coefficient = 2.5
+
+@research_scripted_efficiency_additional_ai_weight = 5
+
+# building additional weight to keep economy stable (more courage to upgrade)
+# @food_building_additional_weight = 5
+# @energy_resource_building_additional_ai_weight = 15
+# @energy_resource_building_additional_ai_weight_special = 30
+# @mineral_resource_building_additional_ai_weight = 8
+
+# @foundry_building_additional_ai_weight = 2
+# @foundry_building_tier2_additional_ai_weight = 4
+# @foundry_building_tier3_additional_ai_weight = 5
+
+# @factory_building_additional_ai_weight = 5
+# @factory_building_tier2_additional_ai_weight = 8
+# @factory_building_tier3_additional_ai_weight = 10
+
+# @refinery_building_additional_ai_weight = 10
+# @industrial_special_building_additional_ai_weight = 10
+
+@ai_zone_priority_research_general = 11
+@ai_zone_priority_research_special = 12
+
+@ai_zone_priority_generic_research_coefficient = 1.5
+@ai_zone_priority_special_research_coefficient = 1.8
+@ai_zone_priority_research_unity_coefficient = 1.2
+
+@ai_zone_priority_research_unity = 9
+
+@ai_zone_priority_urban = 10 
+@ai_zone_priority_urban_coefficient = 0.5 
+
+@ai_zone_priority_industry = 11
+@ai_zone_priority_industry_non_military = 12
+
+@ai_zone_priority_industry_coefficient = 1.2
+#@ai_zone_priority_industry_military = 10
+@ai_zone_priority_industry_non_military_coefficient = 2
+
+@ai_zone_priority_energy = 15
+@ai_zone_priority_energy_special = 25
+@ai_zone_priority_minerals = 10
+
+@ai_zone_priority_strategic_resource = 15

@@ -1,0 +1,21 @@
+	weight = {
+		weight = 0.1
+
+		inline_script = {
+			script = stellarai/early_game_army_weight_modifiers
+		}
+
+		modifier = {
+			factor = 2
+			OR = {
+				any_neighbor_country = {
+					has_ascension_perk = ap_become_the_crisis
+				}
+				any_country = {
+					is_crisis_faction = yes
+				}
+			}
+		}
+
+
+}

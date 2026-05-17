@@ -1839,7 +1839,7 @@ civic_machine_replication = {
 	potential = {
 		authority = { value = auth_machine_intelligence }
 	}
-	random_weight = { base = 100 # add @civic_default_random_weight }
+	random_weight = { base = 100  } # add @civic_default_random_weight
 	ai_weight = {
 		base = 100 # add @ai_civic_default_base_weight
 	}

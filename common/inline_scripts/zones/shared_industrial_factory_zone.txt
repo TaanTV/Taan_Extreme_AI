@@ -6,10 +6,6 @@ potential = { # planet scope
 		owner = {
 			country_uses_consumer_goods = yes
 		}
-		inline_script = {
-			script = stellarai/invalid_colony_type_potential
-			PLANET_FLAG = stellarai_invalid_for_factory_to_build
-		}
 	}
 }
 
@@ -18,10 +14,6 @@ unlock = { # planet scope
 		exists = owner
 		owner = {
 			country_uses_consumer_goods = yes
-		}
-		inline_script = {
-			script = stellarai/invalid_colony_type_potential
-			PLANET_FLAG = stellarai_invalid_for_factory_to_build
 		}
 	}
 }
@@ -53,7 +45,6 @@ ai_resource_production = {
 
 	trigger = {
 		has_any_factory_zone = yes
-		#NOT = { has_planet_flag = stellarai_invalid_for_factory_to_build }
 	}
 }
 

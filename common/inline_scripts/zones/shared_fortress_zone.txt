@@ -40,5 +40,5 @@ planet_modifier = {
 	zone_building_slots_add = 3
 }
 
+ai_weight_coefficient = 0.1
 ai_priority = 1
-ai_weight_coefficient = 0.01

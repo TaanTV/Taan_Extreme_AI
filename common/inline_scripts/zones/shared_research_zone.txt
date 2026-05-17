@@ -7,10 +7,6 @@ potential = { # planet scope
 			is_wilderness_empire = no
 		}
 	}
-	inline_script = {
-		script = stellarai/invalid_colony_type_potential
-		PLANET_FLAG = stellarai_invalid_for_research_to_build
-	}
 }
 
 unlock = { # planet scope
@@ -19,10 +15,6 @@ unlock = { # planet scope
 		owner = {
 			is_wilderness_empire = no
 		}
-	}
-	inline_script = {
-		script = stellarai/invalid_colony_type_potential
-		PLANET_FLAG = stellarai_invalid_for_research_to_build
 	}
 }
 
@@ -55,7 +47,6 @@ ai_resource_production = {
 
 	trigger = {
 		has_any_research_zone = yes
-		NOT = { has_planet_flag = stellarai_invalid_for_research_to_build }
 	}
 }
 

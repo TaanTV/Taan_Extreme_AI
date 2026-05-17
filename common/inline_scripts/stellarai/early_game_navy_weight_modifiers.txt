@@ -1,7 +1,59 @@
-# modifier = {
-# 	factor = 0.66
-# 	AND = {
-# 		years_passed < 41
-# 		is_at_war = no
-# 	}
-# }
+modifier = {
+	factor = 0.8
+	AND = {
+		years_passed < 10
+		years_passed < 41
+		is_at_war = no
+		highest_threat < 13
+	}
+}
+
+modifier = {
+	factor = 0.8
+	AND = {
+		years_passed < 15
+		years_passed < 41
+		is_at_war = no
+		highest_threat < 13
+	}
+}
+
+modifier = {
+	factor = 0.85
+	AND = {
+		years_passed < 20
+		years_passed < 41
+		is_at_war = no
+		highest_threat < 13
+	}
+}
+
+modifier = {
+	factor = 0.92
+	AND = {
+		years_passed < 25
+		years_passed < 41
+		is_at_war = no
+		highest_threat < 13
+	}
+}
+
+modifier = {
+	factor = 0.92
+	AND = {
+		years_passed < 30
+		years_passed < 41
+		is_at_war = no
+		highest_threat < 13
+	}
+}
+
+modifier = {
+	factor = 0.98
+	AND = {
+		years_passed < 35
+		years_passed < 41
+		is_at_war = no
+		highest_threat < 13
+	}
+}

@@ -7,10 +7,6 @@ potential = { # planet scope
 		owner = {
 			is_wilderness_empire = no
 		}
-		inline_script = {
-			script = stellarai/invalid_colony_type_potential
-			PLANET_FLAG = stellarai_invalid_for_foundry_to_build
-		}
 	}
 }
 
@@ -19,10 +15,6 @@ unlock = { # planet scope
 		exists = owner
 		owner = {
 			is_wilderness_empire = no
-		}
-		inline_script = {
-			script = stellarai/invalid_colony_type_potential
-			PLANET_FLAG = stellarai_invalid_for_foundry_to_build
 		}
 	}
 }
@@ -54,9 +46,8 @@ ai_resource_production = {
 
 	trigger = {
 		has_any_foundry_zone = yes
-		#NOT = { has_planet_flag = stellarai_invalid_for_foundry_to_build }
 	}
 }
 
-ai_priority = @ai_zone_priority_industry
 ai_weight_coefficient = @ai_zone_priority_industry_coefficient
+ai_priority = @ai_zone_priority_industry
