@@ -1,0 +1,68 @@
+lasers are default M weapon for energy users
+disruptors only used by explosive and sc users
+plasma is only used by energy and kinetic users
+large plasma is not used by the AI
+energy users like large Null-Void Beams
+railguns are default M weapon for kinetic users
+kinetic users favor missiles and small plasma over small autocannons because presumably the longer ranged kinetic weapons already took out enemy shields
+large autocannons are not used by the AI
+energy users don't use missiles and swarmers
+swarmers are the default M weapon for explosive users
+energy users favor energy torpedoes over regular torpedoes
+non-energy users favor regular torpdoes over energy torpedoes
+
+----------------------------------------------------------------------------
+
+swarmer missiles: 10 > 23
+whirlwind missiles: 17 > 39
+
+torpedo 1: 20 > 23
+torpedo 2: 26 > 30
+torpedo 3: 34 > 39
+
+energy torpedo 1: 59 > 39
+energy torpedo 2: 77 > 51
+
+AI with energy preference won't use missiles and swarmers, but likes Null-Void Beam (if available).
+AI will only use energy torpedoes if it prefers energy weapons.
+
+AI with explosive preference love swarmers.
+
+AI will only use small autocannons and disruptors.
+
+AI dislikes large plasma (except kinetic users).
+
+AI with kinetic preference likes medium plasma more and will use medium autocannons if they are more advanced than railguns.
+
+General:
+- AI will only use small variants of autocannons and disruptors.
+- AI will not use large variants of plasma.
+- AI prefers normal torpedoes over energy torpedoes.
+
+Energy:
+- Prefered L weapon is lasers
+- Prefered M weapon is plasma
+- Prefered S weapon is autocannons
+- Prefered G weapon is energy torpedo
+- Will not use missile weapons or swarmers.
+
+Explosive:
+- Prefered L weapon is artillery
+- Prefered M weapon is swarmers
+- Prefered S weapon is missiles
+- Prefered G weapon is regular torpedo
+
+Kinetic:
+- Prefered L weapon is artillery
+- Prefered M weapon is railguns
+- Prefered S weapon is plasma
+- Prefered G weapon is regular torpedo
+
+Strike Craft:
+- Prefered L weapon is artillery
+- Prefered M weapon is swarmers
+- Prefered S weapon is autocannons
+- Prefered G weapon is regular torpedo
+
+
+

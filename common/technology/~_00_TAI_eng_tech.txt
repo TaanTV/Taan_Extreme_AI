@@ -251,8 +251,13 @@ tech_battleships = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
-
+		weight = 1000 # add 
+		
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 40 }
+		}
 	}
 }
 
@@ -874,7 +879,7 @@ tech_battleship_build_speed = {
 	}
 
 	ai_weight = {
-
+		base = 500 # add 
 	}
 
 	technology_swap = {
@@ -919,7 +924,7 @@ tech_battleship_hull_1 = {
 	}
 
 	ai_weight = {
-
+		base = 500 # add 
 	}
 
 	technology_swap = {
@@ -977,7 +982,7 @@ tech_battleship_hull_2 = {
 	}
 
 	ai_weight = {
-
+		base = 500 # add 
 	}
 
 	technology_swap = {
@@ -1033,7 +1038,7 @@ tech_titan_hull_1 = {
 	}
 
 	ai_weight = {
-
+		base = 100 # add 
 	}
 
 	technology_swap = {
@@ -1085,7 +1090,7 @@ tech_titan_hull_2 = {
 	}
 
 	ai_weight = {
-
+		base = 100 # add 
 	}
 
 	technology_swap = {
@@ -1357,7 +1362,6 @@ tech_habitat_1 = {
 		}
 	}
 
-	# unlocks Habitats
 	weight_modifier = {
 		modifier = {
 			factor = 0.1
@@ -1406,13 +1410,20 @@ tech_habitat_1 = {
 	}
 
 	ai_weight = {
-		base = 100000 # add 
+		factor = 1
+
 		modifier = {
-			factor = 0.1
-			NOT = { years_passed > 20 }
+			factor = 0
+			NOT = { years_passed > 30 }
 		}
+
 		modifier = {
-			factor = 100
+			factor = 1000
+			years_passed > 30
+		}
+
+		modifier = {
+			factor = 10
 			OR = {
 				has_origin = origin_toxic_knights
 				has_country_flag = payback_habitat
@@ -1652,14 +1663,10 @@ tech_strike_craft_1 = {
 	}
 
 	ai_weight = {
-
+		base = 10 # add 
 		modifier = {
-			factor = @favored_weapon_ai_tech_factor
-			is_preferred_weapons = weapon_type_strike_craft
-		}
-		modifier = {
-			factor = @disfavored_weapon_ai_tech_factor
-			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+			factor = 0.1
+			NOT = { years_passed > 10 }
 		}
 	}
 }
@@ -1863,7 +1870,7 @@ tech_ship_armor_2 = {
 		base = 10
 		
 		modifier = {
-			factor = 50
+			factor = 5
 			years_passed > 18 # add
 		}
 	}
@@ -1910,7 +1917,7 @@ tech_ship_armor_3 = {
 		base = 50
 		
 		modifier = {
-			factor = 50
+			factor = 5
 			years_passed > 18 # add
 		}
 	}
@@ -1957,7 +1964,7 @@ tech_ship_armor_4 = {
 		base = 50
 		
 		modifier = {
-			factor = 50
+			factor = 5
 			years_passed > 18 # add
 		}
 	}
@@ -2464,7 +2471,7 @@ tech_space_mining_3 = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -2485,7 +2492,7 @@ tech_space_mining_4 = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -2506,7 +2513,7 @@ tech_space_mining_5 = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -2680,7 +2687,7 @@ tech_mineral_purification_2 = {
 	}
 
 	ai_weight = {
-		factor = @ai_mining_building_factor
+		base = 50 # add 
 	}
 }
 
@@ -3162,6 +3169,7 @@ tech_droid_workers = {
 	}
 
 	ai_weight = {
+		base = 50 # add 
 		factor = @robots_ai_tech_factor
 		modifier = {
 			factor = 2
@@ -3251,6 +3259,7 @@ tech_synthetic_workers = {
 	}
 
 	ai_weight = {
+		base = 10 # add 
 		factor = @robots_ai_tech_factor
 		modifier = {
 			factor = 2
@@ -3524,7 +3533,7 @@ tech_assembly_pattern = {
 		}
 	}
 	ai_weight = {
-		base = 1 # add 
+		base = 100 # add 
 	}
 }
 
@@ -3576,7 +3585,7 @@ tech_construction_templates = {
 	}
 
 	ai_weight = {
-		base = 1 # add 
+		base = 100 # add 
 	}
 }
 
@@ -3605,7 +3614,7 @@ tech_housing_1 = {
 	}
 
 	ai_weight = {
-		base = 50 # add 
+		base = 10 # add 
 	}
 }
 

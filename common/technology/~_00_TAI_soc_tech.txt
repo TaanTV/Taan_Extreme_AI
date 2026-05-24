@@ -406,6 +406,7 @@ tech_nano_vitality_crops = {
 	}
 
 	ai_weight = {
+		base = 50 # add 
 		factor = @farming_ai_weight_factor
 		modifier = {
 			factor = 1.25
@@ -741,8 +742,7 @@ tech_food_processing_2 = {
 	}
 
 	ai_weight = {
-		factor = 0.01 # add @ai_engineering_tech_speed_factor
-		factor = 0.01 # add @zone_clear_ai_tech_factor
+		base = 50 # add 
 		modifier = {
 			factor = 0
 			country_uses_food = no
@@ -1119,7 +1119,7 @@ tech_colonization_3 = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -1141,7 +1141,7 @@ tech_colonization_4 = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -1163,7 +1163,7 @@ tech_colonization_5 = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -2470,8 +2470,7 @@ tech_cloning = {
 	}
 
 	ai_weight = {
-		factor = 0.01 # add @ai_engineering_tech_speed_factor
-		factor = 0.01 # add @zone_clear_ai_tech_factor
+		base = 5000 # add 
 	}
 }
 
@@ -3293,7 +3292,7 @@ tech_doctrine_fleet_size_1 = {
 		
 		modifier = {
 			factor = 10
-			years_passed > 20 # add 
+			years_passed > 10 # add 
 		}
 	}
 }
@@ -3321,11 +3320,7 @@ tech_doctrine_fleet_size_2 = {
 	}
 
 	ai_weight = {
-		base = 1
-		modifier = {
-			factor = 10
-			years_passed > 40
-		}
+		base = 5
 	}
 }
 
@@ -3352,11 +3347,7 @@ tech_doctrine_fleet_size_3 = {
 	}
 
 	ai_weight = {
-		base = 1
-		modifier = {
-			factor = 10
-			years_passed > 50
-		}
+		base = 5
 	}
 }
 
@@ -3383,11 +3374,7 @@ tech_doctrine_fleet_size_4 = {
 	}
 
 	ai_weight = {
-		base = 1
-		modifier = {
-			factor = 10
-			years_passed > 60
-		}
+		base = 5
 	}
 }
 
@@ -3414,11 +3401,7 @@ tech_doctrine_fleet_size_5 = {
 	}
 
 	ai_weight = {
-		base = 1
-		modifier = {
-			factor = 10
-			years_passed > 80
-		}
+		base = 5
 	}
 }
 
@@ -3576,7 +3559,7 @@ tech_doctrine_navy_size_2 = {
 		
 		modifier = {
 			factor = 100
-			years_passed > 15
+			years_passed > 10
 		}
 	}
 }
@@ -3603,11 +3586,11 @@ tech_doctrine_navy_size_3 = {
 
 	}
 	ai_weight = {
-		base = 10
+		base = 50
 		
 		modifier = {
-			factor = 100
-			years_passed > 30
+			factor = 10
+			years_passed > 20
 		}
 	}
 }
@@ -3635,11 +3618,12 @@ tech_doctrine_navy_size_4 = {
 	}
 
 	ai_weight = {
+		base = 50
+		
 		modifier = {
 			factor = 2
-			is_militarist = yes
+			years_passed > 20
 		}
-
 	}
 }
 
@@ -3669,11 +3653,7 @@ tech_centralized_command = {
 	}
 
 	ai_weight = {
-		modifier = {
-			factor = 2
-			is_militarist = yes
-		}
-
+		base = 30 # add 
 	}
 }
 
@@ -4420,11 +4400,7 @@ tech_interstellar_campaigns = {
 	}
 
 	ai_weight = {
-		modifier = {
-			factor = 2
-			is_militarist = yes
-		}
-
+		base = 20 # add 
 	}
 }
 
@@ -4470,15 +4446,7 @@ tech_galactic_campaigns = {
 	}
 
 	ai_weight = {
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 2
-			has_ethic = ethic_fanatic_militarist
-		}
-
+		base = 20 # add 
 	}
 }
 
@@ -4541,22 +4509,7 @@ tech_existential_campaigns = {
 	}
 
 	ai_weight = {
-		modifier = {
-			factor = 2
-			has_ethic = ethic_fanatic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 0.5
-			has_ethic = ethic_pacifist
-		}
-		modifier = {
-			factor = 0
-			is_fanatic_pacifist = yes
-		}
+		base = 20 # add 
 	}
 }
 
@@ -5119,7 +5072,7 @@ tech_living_state = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -5211,7 +5164,7 @@ tech_autonomous_agents = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -5350,7 +5303,7 @@ tech_artificial_moral_codes = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -5502,7 +5455,7 @@ tech_hyper_entertainment_forum = {
 	}
 
 	ai_weight = {
-
+		base = 20 # add 
 	}
 }
 
@@ -5920,7 +5873,7 @@ tech_ascension_theory = {
 	}
 
 	ai_weight = {
-		factor = 5 #more ascension perks are good
+		factor = 5000 #more ascension perks are good
 	}
 }
 
@@ -5973,6 +5926,9 @@ tech_psionic_barrier = {
 	weight_modifier = {
 		factor = 0
 	}
+	ai_weight = {
+		base = 5000 # add 
+	}
 }
 
 tech_psionic_shield = {
@@ -6019,6 +5975,9 @@ tech_psionic_shield = {
 
 	weight_modifier = {
 		factor = 0
+	}
+	ai_weight = {
+		base = 5000 # add 
 	}
 }
 
@@ -6134,7 +6093,8 @@ tech_slave_colonies = {
 	}
 
 	ai_weight = {
-
+		factor = 0.01 # add @ai_engineering_tech_speed_factor
+		factor = 0.01 # add @zone_clear_ai_tech_factor
 	}
 }
 
@@ -6280,19 +6240,8 @@ tech_xeno_diplomacy = {
 	}
 
 	ai_weight = {
-
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_xenophile
-		}
-		modifier = {
-			factor = 2
-			has_ethic = ethic_fanatic_xenophile
-		}
-		modifier = {
-			factor = 0.01
-			has_civic = civic_inwards_perfection
-		}
+		factor = 0.01 # add @ai_engineering_tech_speed_factor
+		factor = 0.01 # add @zone_clear_ai_tech_factor
 	}
 }
 
@@ -6336,19 +6285,8 @@ tech_xeno_relations = {
 	}
 
 	ai_weight = {
-
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_xenophile
-		}
-		modifier = {
-			factor = 2
-			has_ethic = ethic_fanatic_xenophile
-		}
-		modifier = {
-			factor = 0.01
-			has_civic = civic_inwards_perfection
-		}
+		factor = 0.01 # add @ai_engineering_tech_speed_factor
+		factor = 0.01 # add @zone_clear_ai_tech_factor
 	}
 }
 
@@ -6404,7 +6342,7 @@ tech_capital_productivity_2 = {
 	}
 
 	ai_weight = {
-
+	    factor = 1000 # add
 	}
 }
 
@@ -6432,7 +6370,7 @@ tech_capital_productivity_3 = {
 	}
 
 	ai_weight = {
-
+	    factor = 1000 # add
 	}
 }
 
@@ -6626,7 +6564,7 @@ tech_node_reformatting_1 = {
 	}
 
 	ai_weight = {
-
+		base = 10 # add 
 	}
 }
 
@@ -6683,7 +6621,7 @@ tech_node_reformatting_2 = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -6744,7 +6682,7 @@ tech_node_reformatting_3 = {
 	}
 
 	ai_weight = {
-
+		base = 50 # add 
 	}
 }
 
@@ -7040,6 +6978,7 @@ tech_bio_reactor_2 = {
 	}
 
 	ai_weight = {
-
+		factor = 0.01 # add @ai_engineering_tech_speed_factor
+		factor = 0.01 # add @zone_clear_ai_tech_factor
 	}
 }

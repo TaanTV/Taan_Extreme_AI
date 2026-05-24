@@ -1,0 +1,87 @@
+building_medical_1 = {
+	base_buildtime = @b1_time
+	planet_limit = 1
+	category = amenity
+	icon = building_medical_1
+
+	building_sets = {
+		government
+		urban
+		medical
+	}
+
+	allow = {
+		exists = owner
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
+		owner = {
+			is_regular_empire = yes
+			is_individual_machine = no
+		}
+		OR = {
+			has_planet_flag = ignore_ai_building_limitations
+			owner = { is_ai = no }
+			free_amenities < @amenity_ai_limit
+		}
+		NOT = { has_building = building_low_tech_capital }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			AND = {
+				buildings_stop_pop = yes
+				owner = { is_ai = yes }
+			}
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	inline_script = {
+		script = jobs/healthcare_add
+		AMOUNT = @building_static_jobs
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = clone_army_full_potential
+				has_active_tradition = tr_cloning_artificial_population_clone_army
+			}
+		}
+		clone_soldiers_sustained = @clones_sustained_low
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_purity_heightened_attributes_tradition = yes
+			}
+		}
+		organic_pop_bonus_workforce_mult = @medical_workforce_mult
+	}
+
+	prerequisites = {
+		"tech_basic_health"
+	}
+
+	upgrades = {
+		building_medical_2
+	}
+    ai_estimate_without_unemployment = yes  # add
+    additional_ai_weight = 1000             # add
+}

@@ -1937,7 +1937,7 @@ ap_machine_worlds = {
 	}
 
 	ai_weight = {
-		factor = 100
+		factor = 100000
 		modifier = {
 			factor = 0
 			has_valid_civic = civic_machine_servitor
@@ -1980,7 +1980,7 @@ ap_hive_worlds = {
 	}
 
 	ai_weight = {
-		factor = 1000 # add 100
+		factor = 100000 # add 100
 	}
 }
 

@@ -61,9 +61,16 @@ tech_basic_science_lab_2 = {
 	}
 
 	ai_weight = {
-		factor = 0.01 # add @ai_research_lab_factor
-
+		factor = 1 # add @ai_research_lab_factor
 	}
+    modifier = {
+        factor = 100
+        years_passed > 20
+    }
+    modifier = {
+        factor = 500
+        years_passed > 30
+    }	
 }
 
 tech_basic_science_lab_3 = {
@@ -129,11 +136,17 @@ tech_basic_science_lab_3 = {
 			is_specialist_subject_type = { TYPE = scholarium }
 		}
 	}
-
 	ai_weight = {
-		factor = @ai_research_lab_factor
-
+		factor = 1 # add @ai_research_lab_factor
 	}
+    modifier = {
+        factor = 100
+        years_passed > 20
+    }
+    modifier = {
+        factor = 500
+        years_passed > 30
+    }	
 }
 
 tech_global_research_initiative = {
@@ -702,7 +715,7 @@ tech_self_aware_logic = {
 	}
 
 	ai_weight = {
-	    factor = 10000
+	    factor = 100000
 	}
 }
 
@@ -1143,7 +1156,7 @@ tech_consumer_good_refinement_1 = {
 	}
 
 	ai_weight = {
-
+		base = 500 # add 
 	}
 }
 
@@ -1169,7 +1182,7 @@ tech_consumer_good_refinement_2 = {
 	}
 
 	ai_weight = {
-
+		base = 500 # add 
 	}
 }
 
@@ -2077,7 +2090,7 @@ tech_planetary_shield_generator = {
 	}
 
 	ai_weight = {
-		base = 10000 # add 
+		base = 10 # add 
 	}
 	# unlocks building: planetary shield generator
 }
@@ -2680,7 +2693,16 @@ tech_hyper_drive_3 = {
 	}
 
 	ai_weight = {
+		factor = 10
 
+		modifier = {
+			factor = 50
+			years_passed > 20
+		}
+		modifier = {
+			factor = 10
+			has_country_flag = chosen_empire
+		}
 	}
 }
 

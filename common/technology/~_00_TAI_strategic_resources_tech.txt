@@ -102,7 +102,7 @@ tech_mine_volatile_motes = {
 	}
 
 	ai_weight = {
-		base = 100 # add 
+		base = 1000 # add 
 		factor = @strategic_resource_ai_tech_factor #important resource
 
 	}
@@ -153,7 +153,7 @@ tech_volatile_motes = {
 	}
 
 	ai_weight = {
-		base = 100 # add 
+		base = 1000 # add 
 		factor = @strategic_resource_ai_tech_factor #important resource
 
 	}
@@ -197,7 +197,7 @@ tech_mine_exotic_gases = {
 	}
 
 	ai_weight = {
-		base = 100 # add 
+		base = 1000 # add 
 		factor = @strategic_resource_ai_tech_factor #important resource
 	}
 }
@@ -248,7 +248,7 @@ tech_exotic_gases = {
 	}
 
 	ai_weight = {
-		base = 100 # add 
+		base = 1000 # add 
 	}
 }
 
@@ -297,7 +297,7 @@ tech_mine_rare_crystals = {
 	}
 
 	ai_weight = {
-		base = 100 # add 
+		base = 1000 # add 
 	}
 }
 
@@ -347,7 +347,7 @@ tech_rare_crystals = {
 	}
 
 	ai_weight = {
-		base = 100 # add 
+		base = 1000 # add 
 	}
 }
 
