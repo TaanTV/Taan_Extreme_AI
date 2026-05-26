@@ -214,14 +214,14 @@ ap_become_the_crisis = {
 
 	ai_weight = {
 		factor = 7.5
-		modifier = {
-			factor = 0
-			NOR = {
-				is_militarist = yes
-				is_xenophobe = yes
-				is_gestalt = yes
-			}
-		}
+#		modifier = {
+#			factor = 0
+#			NOR = {
+#				is_militarist = yes
+#				is_xenophobe = yes
+#				is_gestalt = yes
+#			}
+#		}
 		modifier = {
 			factor = 10
 			is_homicidal = yes
@@ -239,13 +239,13 @@ ap_become_the_crisis = {
 			is_infernal_empire = yes
 		}
 		modifier = {
-			factor = 2
+			factor = 200
 			galaxy_percentage > 0.2
 		}
 		modifier = {
 			factor = 0
 			count_playable_country = {
-				count > 1
+				count > 5
 				limit = {
 					has_ascension_perk = ap_become_the_crisis
 				}
@@ -1219,7 +1219,7 @@ ap_eternal_vigilance = {
 	}
 
 	ai_weight = {
-		factor = 2
+		factor = 0 # add 2
 		modifier = {
 			factor = 5
 			has_civic = civic_inwards_perfection
@@ -2151,7 +2151,7 @@ ap_detox = {
 	}
 
 	ai_weight = {
-		factor = 0.01 # add 20
+		factor = 0 # add 20
 		modifier = {
 			factor = 0
 			NOT = {

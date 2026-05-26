@@ -1,0 +1,58 @@
+
+ap_armored_in_firepower = {
+	on_enabled = {
+		custom_tooltip = "d_unlock_aggressive_designs"
+		hidden_effect = {
+            give_technology = {
+                tech = d_armored_in_firepower_tech
+                message = no
+            }
+		}
+	}
+
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_armored_in_firepower
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 2
+		}
+		has_technology = tech_cruisers #tech_battleships
+		has_technology = tech_torpedoes_1
+	}
+
+	ai_weight = {
+		factor = 2
+		# anti-synergy: should build big ships and use them as carriers
+		modifier = {
+			factor = 0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		# anti-synergy: crisis ships don't get new sections
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+		# ethical modifiers
+		modifier = {
+			factor = 0.25
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 0.5
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+				is_homicidal = yes
+			}
+		}
+	}
+}

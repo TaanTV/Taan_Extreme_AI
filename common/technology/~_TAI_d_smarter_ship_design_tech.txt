@@ -1,0 +1,35 @@
+# This is a special technology that can't normally be researched.
+# It's granted by the Armored in Firepower asension perk.
+d_armored_in_firepower_tech = {
+	cost = 1
+	area = engineering
+	category = { voidcraft }
+	tier = 5
+	is_rare = yes
+	ai_update_type = all
+	weight = 0
+
+	modifier = {
+		custom_tooltip = d_unlock_aggressive_designs_tech
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+# This is a dummy tech. 
+# It exists only to be used as an impossible prerequisite for undesirable ship sections to disable them without breaking the game.
+d_dummy_tech = {
+	cost = 1
+	area = society
+	category = { biology }
+	tier = 5
+	is_rare = yes
+	ai_update_type = all
+	weight = 0
+
+	weight_modifier = {
+		factor = 0
+	}
+}

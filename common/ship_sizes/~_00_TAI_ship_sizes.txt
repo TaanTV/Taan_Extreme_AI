@@ -99,6 +99,7 @@ corvette = {
 			base = 0
 			modifier = {
 				add = 33
+	            years_passed >= 10
 				uses_standard_ship_sizes = yes
 				NOT = { has_technology = tech_destroyers }
 			}
@@ -176,6 +177,7 @@ frigate = {
 			base = 0
 			modifier = {
 				add = 33
+	            years_passed >= 10
 				uses_standard_ship_sizes = yes
 				NOT = { has_technology = tech_cruisers }
 			}
@@ -245,11 +247,13 @@ destroyer = {
 			base = 0
 			modifier = {
 				add = 33
+            	years_passed >= 10
 				uses_standard_ship_sizes = yes
 				NOT = { has_technology = tech_battleships }
 			}
 			modifier = {
 				add = 33
+            	years_passed >= 10
 				uses_standard_ship_sizes = yes
 				has_ascension_perk = ap_armored_in_firepower
 			}

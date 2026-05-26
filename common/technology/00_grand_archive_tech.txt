@@ -506,6 +506,14 @@ tech_controlled_mutations = {
 			factor = 1
 		}
 	}
+    ai_weight = {
+        factor = 100  # add
+        
+        modifier = {
+            factor = 0.5  # add
+            years_passed > 12
+        } 
+    }
 }
 
 tech_controlled_mutations_2 = {
@@ -542,6 +550,14 @@ tech_controlled_mutations_2 = {
 			factor = 1
 		}
 	}
+    ai_weight = {
+        factor = 100  # add
+        
+        modifier = {
+            factor = 0.5  # add
+            years_passed > 12
+        } 
+    }
 }
 
 tech_unique_mutation_space_amoeba = {
