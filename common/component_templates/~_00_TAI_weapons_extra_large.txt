@@ -161,7 +161,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 0
 		modifier = {
 			factor = 0.0
 			no_resource_for_component = { RESOURCE = rare_crystals }
@@ -225,7 +225,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 0
 		modifier = {
 			factor = 0.0
 			no_resource_for_component = { RESOURCE = rare_crystals }
@@ -296,7 +296,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 0
 		modifier = {
 			factor = 0.0
 			no_resource_for_component = { RESOURCE = volatile_motes }
@@ -359,7 +359,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 0
 		modifier = {
 			factor = 0.0
 			no_resource_for_component = { RESOURCE = volatile_motes }

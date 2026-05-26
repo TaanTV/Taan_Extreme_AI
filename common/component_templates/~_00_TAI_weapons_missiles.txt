@@ -296,7 +296,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 10
 		modifier = {
 			factor = 10
 			OR = {
@@ -353,7 +353,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 10
 		modifier = {
 			factor = 0.0
 			no_resource_for_component = { RESOURCE = volatile_motes }
