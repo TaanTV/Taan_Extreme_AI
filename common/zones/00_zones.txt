@@ -913,7 +913,6 @@ zone_minerals = {
 	}
 
 	show_in_tech = tech_mineral_purification_1
-	ai_priority = 10000 # add
 }
 
 zone_betharian = {
@@ -1018,7 +1017,7 @@ zone_energy = {
 	}
 
 	show_in_tech = tech_power_hub_1
-	ai_priority = 10000 # add
+	
 }
 
 zone_volatile_motes = {
@@ -1048,7 +1047,6 @@ zone_food = {
 	}
 
 	show_in_tech = tech_food_processing_1
-	ai_priority = 10000 # add
 }
 
 zone_anglers = {

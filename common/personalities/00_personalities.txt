@@ -2120,17 +2120,7 @@ fanatic_purifiers = {
 
 	allow = {
 		is_country_type = default
-		OR = {
-			AND = {
-				NOT = { host_has_dlc = "Utopia" }
-				has_ethic = "ethic_militarist"
-				has_ethic = "ethic_fanatic_xenophobe"
-			}
-			AND = {
-				host_has_dlc = "Utopia"
-				has_valid_civic = "civic_fanatic_purifiers"
-			}
-		}
+		has_valid_civic = "civic_fanatic_purifiers"
 	}
 
 	weight_modifier = {
@@ -2186,17 +2176,7 @@ expansionists_fanatic_purifiers = {
 		is_country_type = default
 		years_passed < 41
 		is_at_war = no
-		OR = {
-			AND = {
-				NOT = { host_has_dlc = "Utopia" }
-				has_ethic = "ethic_militarist"
-				has_ethic = "ethic_fanatic_xenophobe"
-			}
-			AND = {
-				host_has_dlc = "Utopia"
-				has_valid_civic = "civic_fanatic_purifiers"
-			}
-		}
+		has_valid_civic = "civic_fanatic_purifiers"
 	}
 
 	weight_modifier = {
@@ -2921,10 +2901,7 @@ assimilators = {
 
 	allow = {
 		is_country_type = default
-		AND = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
-			has_valid_civic = "civic_machine_assimilator"
-		}
+		has_valid_civic = "civic_machine_assimilator"
 	}
 
 	weight_modifier = {
@@ -2980,10 +2957,7 @@ expansionists_assimilators = {
 		is_country_type = default
 		years_passed < 41
 		is_at_war = no
-		AND = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
-			has_valid_civic = "civic_machine_assimilator"
-		}
+		has_valid_civic = "civic_machine_assimilator"
 	}
 
 	weight_modifier = {
@@ -3035,10 +3009,7 @@ exterminators = {
 
 	allow = {
 		is_country_type = default
-		AND = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
-			has_valid_civic = "civic_machine_terminator"
-		}
+		has_valid_civic = "civic_machine_terminator"
 	}
 
 	weight_modifier = {
@@ -3093,10 +3064,7 @@ expansionists_exterminators = {
 		is_country_type = default
 		years_passed < 41
 		is_at_war = no
-		AND = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
-			has_valid_civic = "civic_machine_terminator"
-		}
+		has_valid_civic = "civic_machine_terminator"
 	}
 
 	weight_modifier = {
@@ -3152,10 +3120,7 @@ servitors = {
 
 	allow = {
 		is_country_type = default
-		AND = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
-			has_valid_civic = "civic_machine_servitor"
-		}
+		has_valid_civic = "civic_machine_servitor"
 	}
 
 	weight_modifier = {
@@ -3214,10 +3179,8 @@ expansionists_servitors = {
 		is_country_type = default
 		years_passed < 41
 		is_at_war = no
-		AND = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
-			has_valid_civic = "civic_machine_servitor"
-		}
+		is_country_type = default
+		has_valid_civic = "civic_machine_servitor"
 	}
 
 	weight_modifier = {

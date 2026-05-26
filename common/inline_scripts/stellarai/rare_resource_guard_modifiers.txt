@@ -1,8 +1,41 @@
 modifier = {
-    factor = 0.01
+    # Hard guard: do not keep adding upkeep-heavy buildings when the empire is already in a strategic resource shortage.
+    factor = 0.001
     owner = {
         OR = {
             has_deficit = $STRATEGIC_RESOURCE$
+            has_monthly_income = {
+                resource = $STRATEGIC_RESOURCE$
+                value < 0
+            }
+        }
+    }
+}
+
+modifier = {
+    # Strong pre-deficit guard: low stockpile and weak income should slow further strategic upkeep growth before a crisis begins.
+    factor = 0.12
+    owner = {
+        AND = {
+            resource_stockpile_compare = {
+                resource = $STRATEGIC_RESOURCE$
+                value < 60
+            }
+            NOT = {
+                has_monthly_income = {
+                    resource = $STRATEGIC_RESOURCE$
+                    value > $MIN_INCOME$
+                }
+            }
+        }
+    }
+}
+
+modifier = {
+    # Existing local guard, kept but strengthened slightly by the two checks above.
+    factor = 0.01
+    owner = {
+        OR = {
             has_monthly_income = {
                 resource = $STRATEGIC_RESOURCE$
                 value < $MIN_INCOME$
@@ -27,6 +60,7 @@ modifier = {
 }
 
 modifier = {
+    # Only relax the guard when both income and stockpile are clearly safe.
     factor = $SURPLUS_FACTOR$
     owner = {
         AND = {

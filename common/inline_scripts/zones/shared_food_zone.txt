@@ -93,4 +93,13 @@ ai_resource_production = {
 }
 
 ai_priority = @ai_zone_priority_food
+
+ai_resource_production = {
+	food = 10
+
+	trigger = {
+		owner = { AND = { country_uses_food = yes OR = { NOT = { has_monthly_income = { resource = food value > 6 } } resource_stockpile_compare = { resource = food value < 1200 } } } }
+	}
+}
+
 ai_weight_coefficient = @stellarai_food_zone_coefficient

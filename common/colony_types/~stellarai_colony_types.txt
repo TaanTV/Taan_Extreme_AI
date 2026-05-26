@@ -179,20 +179,20 @@ col_mining = {
 		}
 		modifier = { has_modifier = mineral_poor factor = 0.15}
 		modifier = {
-			add = 35
-			owner_or_space_owner = { stellarai_machine_energy_emergency = yes }
-		}
-		modifier = {
 			add = 10
-			owner_or_space_owner = { stellarai_machine_basic_econ_stable = yes }
+			owner_or_space_owner = { is_machine_empire = yes has_monthly_income = { resource = energy value > 42 } has_monthly_income = { resource = minerals value > 15 } resource_stockpile_compare = { resource = energy value > 5000 } resource_stockpile_compare = { resource = minerals value > 1200 } }
 		}
 		modifier = {
 			add = 30
-			owner_or_space_owner = { stellarai_machine_minerals_emergency = yes }
+			owner_or_space_owner = { is_machine_empire = yes OR = { NOT = { has_monthly_income = { resource = minerals value > 12 } } resource_stockpile_compare = { resource = minerals value < 900 } } }
 		}
 		modifier = {
 			add = 8
-			owner_or_space_owner = { stellarai_machine_basic_econ_stable = yes }
+			owner_or_space_owner = { is_machine_empire = yes has_monthly_income = { resource = energy value > 42 } has_monthly_income = { resource = minerals value > 15 } resource_stockpile_compare = { resource = energy value > 5000 } resource_stockpile_compare = { resource = minerals value > 1200 } }
+		}
+		modifier = {
+			add = 18
+			owner_or_space_owner = { OR = { NOT = { has_monthly_income = { resource = minerals value > 8 } } resource_stockpile_compare = { resource = minerals value < 1200 } } }
 		}
 		inline_script = "stellarai/rural_penalty_commitment_flags"  
 	}
@@ -292,6 +292,10 @@ col_farming = {
 				has_modifier = unbalanced_ecosystem
 				has_modifier = irradiated_planet
 			}
+		}
+		modifier = {
+			add = 14
+			owner_or_space_owner = { AND = { country_uses_food = yes OR = { NOT = { has_monthly_income = { resource = food value > 6 } } resource_stockpile_compare = { resource = food value < 1200 } } } }
 		}
 		inline_script = "stellarai/rural_penalty_commitment_flags"  
 	}
@@ -437,6 +441,14 @@ col_generator = {
 		modifier = {
 			factor = 0.15
 			has_modifier = energy_poor
+		}
+		modifier = {
+			add = 28
+			owner_or_space_owner = { OR = { NOT = { has_monthly_income = { resource = energy value > 10 } } resource_stockpile_compare = { resource = energy value < 1800 } } }
+		}
+		modifier = {
+			add = 65
+			owner_or_space_owner = { is_machine_empire = yes OR = { NOT = { has_monthly_income = { resource = energy value > 30 } } resource_stockpile_compare = { resource = energy value < 3500 } } }
 		}
 		inline_script = "stellarai/rural_penalty_commitment_flags"  
 
@@ -819,6 +831,10 @@ col_bureau = {
 			factor = 0.15
 		}
 		modifier = {
+			add = 14
+			owner_or_space_owner = { AND = { meets_basic_resource_thresholds = yes OR = { AND = { years_passed < 120 num_ascension_perks < 3 } AND = { years_passed < 180 num_ascension_perks < 4 } } } }
+		}
+		modifier = {
 			add = @bureau_colony_type_stickiness
 			has_designation = col_bureau
 		}
@@ -912,6 +928,10 @@ col_bureau_spiritualist = {
 			factor = 0.15
 		}
 		modifier = {
+			add = 14
+			owner_or_space_owner = { AND = { meets_basic_resource_thresholds = yes OR = { AND = { years_passed < 120 num_ascension_perks < 3 } AND = { years_passed < 180 num_ascension_perks < 4 } } } }
+		}
+		modifier = {
 			add = @bureau_colony_type_stickiness
 			has_designation = col_bureau_spiritualist
 		}
@@ -963,6 +983,10 @@ col_bureau_hive = {
 
 	weight_modifier = {
 		base = 10
+		modifier = {
+			add = 14
+			owner_or_space_owner = { AND = { meets_basic_resource_thresholds = yes OR = { AND = { years_passed < 120 num_ascension_perks < 3 } AND = { years_passed < 180 num_ascension_perks < 4 } } } }
+		}
 		modifier = {
 			add = @bureau_colony_type_stickiness
 			has_designation = col_bureau_hive
@@ -1024,6 +1048,10 @@ col_bureau_machine = {
 				has_planet_flag = stellarai_invalid_for_unity
 			}
 			factor = 0.15
+		}
+		modifier = {
+			add = 14
+			owner_or_space_owner = { AND = { meets_basic_resource_thresholds = yes OR = { AND = { years_passed < 120 num_ascension_perks < 3 } AND = { years_passed < 180 num_ascension_perks < 4 } } } }
 		}
 
 		modifier = {

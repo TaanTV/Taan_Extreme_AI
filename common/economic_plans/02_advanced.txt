@@ -46,6 +46,26 @@ advanced_economy_plan = {
 
 		naval_cap = 200
 	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Stellar AI advanced wartime naval buildup"
+		potential = {
+			country_uses_bio_ships = no
+			is_at_war = yes
+			used_naval_capacity_percent < 1.30
+			has_monthly_income = { resource = alloys value > 38 }
+			resource_stockpile_compare = { resource = alloys value > 1400 }
+			has_monthly_income = { resource = energy value > 18 }
+			resource_stockpile_compare = { resource = energy value > 2800 }
+		}
+
+		income = {
+			alloys = 180
+		}
+		naval_cap = 520
+	}
 	
 	subplan = {
 		scaling = yes
@@ -97,5 +117,32 @@ advanced_economy_plan = {
 		}
 	}
 	
+	# subplan = {
+	# 	scaling = yes
+	# 	set_name = "Machine Stellar AI advanced energy safety buffer"
+	# 	potential = {
+	# 		is_machine_empire = yes
+	# 		OR = {
+	# 			NOT = { has_monthly_income = { resource = energy value > 85 } }
+	# 			resource_stockpile_compare = { resource = energy value < 11000 }
+	# 		}
+	# 	}
+	# 	income = { energy = 40 }
+	# }
+
+	# subplan = {
+	# 	scaling = yes
+	# 	set_name = "Stellar AI consumer goods recovery"
+	# 	potential = {
+	# 		country_uses_consumer_goods = yes
+	# 		OR = {
+	# 			has_deficit = consumer_goods
+	# 			NOT = { has_monthly_income = { resource = consumer_goods value > 8 } }
+	# 			resource_stockpile_compare = { resource = consumer_goods value < 1200 }
+	# 		}
+	# 	}
+	# 	income = { consumer_goods = 35 }
+	# }
+
 	inline_script = "ai/ai_strategic_resources"
 }

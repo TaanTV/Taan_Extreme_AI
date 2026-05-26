@@ -57,5 +57,22 @@ ai_resource_production = {
 	}
 }
 
+
+
+ai_resource_production = {
+	consumer_goods = 24
+
+	trigger = {
+		owner = {
+			country_uses_consumer_goods = yes
+			OR = {
+				has_deficit = consumer_goods
+				NOT = { has_monthly_income = { resource = consumer_goods value > 4 } }
+				resource_stockpile_compare = { resource = consumer_goods value < 700 }
+			}
+		}
+	}
+}
+
 ai_priority = @ai_zone_priority_industry_non_military
 ai_weight_coefficient = @ai_zone_priority_industry_non_military_coefficient

@@ -29,7 +29,7 @@
 @research_colony_type_stickiness = 8
 @industrial_colony_type_stickiness = 4
 @industrial_forge_colony_type_stickiness = 4
-@bureau_colony_type_stickiness = 3
+@bureau_colony_type_stickiness = 4
 @mining_colony_type_stickiness = 4
 @farming_colony_type_stickiness = 4
 @energy_colony_type_stickiness = 6
@@ -97,7 +97,7 @@
 @zone_forge_additional_weight = 90
 @forge_building_weight_per_building = 120
 
-@zone_urban_bureau_additional_weight = 35
+@zone_urban_bureau_additional_weight = 40
 
 @stellarai_zone_rural = 10
 @stellarai_zone_rural_priority = 15
@@ -267,9 +267,9 @@
 
 @ai_zone_priority_generic_research_coefficient = 2.1
 @ai_zone_priority_special_research_coefficient = 2.2
-@ai_zone_priority_research_unity_coefficient = 1.7
+@ai_zone_priority_research_unity_coefficient = 1.8
 
-@ai_zone_priority_research_unity = 8
+@ai_zone_priority_research_unity = 9
 
 @ai_zone_priority_urban = 9 
 @ai_zone_priority_urban_coefficient = 1.3 

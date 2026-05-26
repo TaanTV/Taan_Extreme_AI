@@ -28,7 +28,7 @@ alloys_expenditure_ships = {
 	}
 
 	weight = {
-		weight = 0.8
+		weight = 1.0
 
 		# inline_script = {
 		# 	script = stellarai/early_game_navy_weight_modifiers
@@ -87,16 +87,67 @@ alloys_expenditure_ships = {
 
 		# spend more alloys building ships while at war
 		modifier = {
-			factor = 3
+			factor = 4.5
 			OR = {
 				recently_lost_war = yes
 				is_at_war = yes
 			}
 		}
 
+		# Wartime decisive fleet buildup: if the economy is healthy and naval capacity is not filled,
+		# push hard into ships. This is intentionally gated by resource safety so weak economies
+		# do not collapse while already under pressure.
+		modifier = {
+			factor = 2.40
+			AND = {
+				is_at_war = yes
+				used_naval_capacity_percent < 0.95
+				has_monthly_income = { resource = alloys value > 12 }
+				resource_stockpile_compare = { resource = alloys value > 450 }
+				has_monthly_income = { resource = energy value > 8 }
+				resource_stockpile_compare = { resource = energy value > 1200 }
+				has_monthly_income = { resource = minerals value > 8 }
+				resource_stockpile_compare = { resource = minerals value > 900 }
+				OR = {
+					NOT = { country_uses_food = yes }
+					AND = {
+						has_monthly_income = { resource = food value > 4 }
+						resource_stockpile_compare = { resource = food value > 700 }
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 3.00
+			AND = {
+				is_at_war = yes
+				used_naval_capacity_percent < 1.08
+				has_monthly_income = { resource = alloys value > 24 }
+				resource_stockpile_compare = { resource = alloys value > 900 }
+				has_monthly_income = { resource = energy value > 14 }
+				resource_stockpile_compare = { resource = energy value > 2200 }
+				has_monthly_income = { resource = minerals value > 14 }
+				resource_stockpile_compare = { resource = minerals value > 1600 }
+			}
+		}
+
+		modifier = {
+			factor = 3.60
+			AND = {
+				is_at_war = yes
+				years_passed > 50
+				used_naval_capacity_percent < 1.20
+				has_monthly_income = { resource = alloys value > 42 }
+				resource_stockpile_compare = { resource = alloys value > 1800 }
+				has_monthly_income = { resource = energy value > 22 }
+				resource_stockpile_compare = { resource = energy value > 3500 }
+			}
+		}
+
 		# Strong emergency response under heavy military pressure
 		modifier = {
-			factor = 2.25
+			factor = 2.40
 			stellarai_military_emergency = yes
 		}
 
@@ -134,7 +185,7 @@ alloys_expenditure_ships = {
 
 		# spend less alloys on ships if over capacity
 		modifier = {
-			factor = 0.75
+			factor = 0.45
 			stellarai_machine_energy_emergency = yes
 		}
 
@@ -149,14 +200,112 @@ alloys_expenditure_ships = {
 			used_naval_capacity_percent < 1.0
 		}
 
+		# Strong-economy fleet buildup: when the AI has real alloy surplus and basic resources are stable,
+		# push excess alloys into ships instead of letting the fleet stay underbuilt.
+		# Kept gated by naval-cap usage and resource safety so this does not override recovery logic.
+		modifier = {
+			factor = 1.75
+			AND = {
+				years_passed > 20
+				used_naval_capacity_percent < 0.90
+				has_monthly_income = { resource = alloys value > 18 }
+				resource_stockpile_compare = { resource = alloys value > 700 }
+				has_monthly_income = { resource = energy value > 8 }
+				has_monthly_income = { resource = minerals value > 10 }
+				resource_stockpile_compare = { resource = energy value > 1600 }
+				resource_stockpile_compare = { resource = minerals value > 1200 }
+				OR = {
+					NOT = { country_uses_food = yes }
+					AND = {
+						has_monthly_income = { resource = food value > 6 }
+						resource_stockpile_compare = { resource = food value > 1000 }
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 2.10
+			AND = {
+				years_passed > 45
+				used_naval_capacity_percent < 1.05
+				has_monthly_income = { resource = alloys value > 35 }
+				resource_stockpile_compare = { resource = alloys value > 1500 }
+				has_monthly_income = { resource = energy value > 14 }
+				has_monthly_income = { resource = minerals value > 16 }
+				resource_stockpile_compare = { resource = energy value > 2400 }
+				resource_stockpile_compare = { resource = minerals value > 1800 }
+				OR = {
+					NOT = { country_uses_food = yes }
+					AND = {
+						has_monthly_income = { resource = food value > 8 }
+						resource_stockpile_compare = { resource = food value > 1400 }
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 2.60
+			AND = {
+				years_passed > 80
+				used_naval_capacity_percent < 1.15
+				has_monthly_income = { resource = alloys value > 60 }
+				resource_stockpile_compare = { resource = alloys value > 3000 }
+				has_monthly_income = { resource = energy value > 22 }
+				has_monthly_income = { resource = minerals value > 24 }
+				resource_stockpile_compare = { resource = energy value > 4000 }
+				resource_stockpile_compare = { resource = minerals value > 3000 }
+				OR = {
+					NOT = { country_uses_food = yes }
+					AND = {
+						has_monthly_income = { resource = food value > 12 }
+						resource_stockpile_compare = { resource = food value > 2200 }
+					}
+				}
+			}
+		}
+
 		modifier = {
 			factor = 1.25
 			stellarai_exterminator_war_ramp = yes
 		}
 
 		modifier = {
-			factor = 0.5
-			used_naval_capacity_percent >= 1.0
+			factor = 0.90
+			OR = {
+				OR = {
+					NOT = { has_monthly_income = { resource = energy value > 6 } }
+					resource_stockpile_compare = { resource = energy value < 1500 }
+				}
+				OR = {
+					NOT = { has_monthly_income = { resource = minerals value > 8 } }
+					resource_stockpile_compare = { resource = minerals value < 1200 }
+				}
+				AND = {
+					country_uses_food = yes
+					OR = {
+						NOT = { has_monthly_income = { resource = food value > 6 } }
+						resource_stockpile_compare = { resource = food value < 1200 }
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.65
+			AND = {
+				used_naval_capacity_percent >= 1.0
+				is_at_war = no
+			}
+		}
+
+		modifier = {
+			factor = 0.82
+			AND = {
+				used_naval_capacity_percent >= 1.15
+				is_at_war = yes
+			}
 		}
 
 		# Biological Ships use less alloys
@@ -187,6 +336,7 @@ alloys_expenditure_ships = {
 			add = @ai_ship_budget_desired_min_per_year
 			country_uses_bio_ships = no
 		}
+
 
 		modifier = {
 			factor = trigger:years_passed
@@ -235,6 +385,18 @@ alloys_expenditure_ship_upgrades = {
 			used_naval_capacity_percent >= 1.0
 		}
 
+		# If the economy is strong, do not leave obsolete fleets unupgraded for too long.
+		modifier = {
+			factor = 1.35
+			AND = {
+				years_passed > 35
+				has_monthly_income = { resource = alloys value > 25 }
+				resource_stockpile_compare = { resource = alloys value > 1200 }
+				has_monthly_income = { resource = energy value > 10 }
+				resource_stockpile_compare = { resource = energy value > 1800 }
+			}
+		}
+
 		# Biological Ships use less alloys
 		modifier = {
 			factor = 0.33
@@ -280,6 +442,14 @@ alloys_expenditure_planets = {
 
 	weight = {
 		weight = 0.1
+
+		# During wars, avoid letting planet alloy spending compete too much with shipbuilding
+		# while the navy is still below desired strength.
+		modifier = {
+			factor = 0.40
+			is_at_war = yes
+			used_naval_capacity_percent < 1.10
+		}
 	}
 
 	desired_min = {
@@ -346,6 +516,11 @@ alloys_expenditure_starbases = {
 		modifier = {
 			factor = 1.20
 			is_machine_empire = yes
+		}
+
+		modifier = {
+			factor = 0.45
+			stellarai_machine_energy_emergency = yes
 		}
 
 		modifier = {
@@ -487,6 +662,14 @@ alloys_expenditure_starbases_expand = {
 
 	weight = {
 		weight = 0.35
+
+		# In wartime, expansion starbase spending should not compete strongly with shipbuilding
+		# unless the AI is already filling its navy.
+		modifier = {
+			factor = 0.65
+			is_at_war = yes
+			used_naval_capacity_percent < 0.95
+		}
 
 		modifier = {
 			factor = 0.55

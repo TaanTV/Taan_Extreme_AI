@@ -69,4 +69,13 @@ ai_resource_production = {
 }
 
 ai_priority = @ai_zone_priority_minerals
+
+ai_resource_production = {
+	minerals = 14
+
+	trigger = {
+		owner = { OR = { NOT = { has_monthly_income = { resource = minerals value > 8 } } resource_stockpile_compare = { resource = minerals value < 1200 } } }
+	}
+}
+
 ai_weight_coefficient = @stellarai_minerals_zone_coefficient

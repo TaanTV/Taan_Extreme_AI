@@ -33,3 +33,21 @@ modifier = {
 		resource_stockpile_compare = { resource = energy value < 1000 }
 	}
 }
+
+
+modifier = {
+	factor = 0.96
+	owner = { AND = { meets_basic_resource_thresholds = yes OR = { AND = { years_passed < 120 num_ascension_perks < 3 } AND = { years_passed < 180 num_ascension_perks < 4 } } } }
+}
+
+
+modifier = {
+	factor = 0.88
+	owner = { OR = { NOT = { has_monthly_income = { resource = energy value > 6 } } resource_stockpile_compare = { resource = energy value < 1500 } } }
+}
+
+
+modifier = {
+	factor = 0.92
+	owner = { OR = { NOT = { has_monthly_income = { resource = minerals value > 8 } } resource_stockpile_compare = { resource = minerals value < 1200 } } }
+}

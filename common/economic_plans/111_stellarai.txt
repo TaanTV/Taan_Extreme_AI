@@ -57,8 +57,54 @@ advanced_economy_plan = {
 		potential = {
 			is_machine_empire = yes
 			OR = {
-				has_monthly_income = { resource = energy value < 40 }
-				resource_stockpile_compare = { resource = energy value < 4000 }
+				has_monthly_income = { resource = energy value < 65 }
+				resource_stockpile_compare = { resource = energy value < 8000 }
+			}
+		}
+
+		income = {
+			energy = 75
+		}
+	}
+
+	subplan = {
+		scaling = yes
+		set_name = "Machine Stellar AI advanced severe energy support"
+		potential = {
+			is_machine_empire = yes
+			has_monthly_income = { resource = energy value < 0 }
+			resource_stockpile_compare = { resource = energy value < 3200 }
+		}
+
+		income = {
+			energy = 130
+		}
+	}
+
+	subplan = {
+		scaling = yes
+		set_name = "Determined Exterminator advanced energy support"
+		potential = {
+			has_valid_civic = civic_machine_terminator
+			OR = {
+				has_monthly_income = { resource = energy value < 85 }
+				resource_stockpile_compare = { resource = energy value < 9000 }
+			}
+		}
+
+		income = {
+			energy = 55
+		}
+	}
+	
+	subplan = {
+		scaling = yes
+		set_name = "Machine Stellar AI advanced energy safety buffer"
+		potential = {
+			is_machine_empire = yes
+			OR = {
+				NOT = { has_monthly_income = { resource = energy value > 85 } }
+				resource_stockpile_compare = { resource = energy value < 11000 }
 			}
 		}
 
@@ -69,32 +115,240 @@ advanced_economy_plan = {
 
 	subplan = {
 		scaling = yes
-		set_name = "Machine Stellar AI advanced severe energy support"
+		set_name = "Second tier Stellar AI consumer goods recovery"
 		potential = {
-			is_machine_empire = yes
-			has_monthly_income = { resource = energy value < 0 }
-			resource_stockpile_compare = { resource = energy value < 1500 }
+			country_uses_consumer_goods = yes
+			OR = {
+				has_deficit = consumer_goods
+				NOT = { has_monthly_income = { resource = consumer_goods value > 8 } }
+				resource_stockpile_compare = { resource = consumer_goods value < 1200 }
+			}
 		}
 
 		income = {
-			energy = 80
+			consumer_goods = 35
+		}
+	}
+
+subplan = {
+		scaling = yes
+		set_name = "Stellar AI unity support"
+		potential = {
+			meets_basic_resource_thresholds = yes
+			OR = {
+				AND = {
+					years_passed < 120
+					num_ascension_perks < 3
+				}
+				AND = {
+					years_passed < 180
+					num_ascension_perks < 4
+				}
+			}
+		}
+
+		income = {
+			unity = 35
 		}
 	}
 
 	subplan = {
 		scaling = yes
-		set_name = "Determined Exterminator advanced energy support"
+		set_name = "Stellar AI energy recovery"
 		potential = {
-			has_valid_civic = civic_machine_terminator
 			OR = {
-				has_monthly_income = { resource = energy value < 60 }
-				resource_stockpile_compare = { resource = energy value < 5000 }
+				NOT = { has_monthly_income = { resource = energy value > 12 } }
+				resource_stockpile_compare = { resource = energy value < 3200 }
 			}
 		}
 
 		income = {
-			energy = 30
+			energy = 35
 		}
 	}
-	
+
+	subplan = {
+		scaling = yes
+		set_name = "Stellar AI minerals recovery"
+		potential = {
+			OR = {
+				NOT = { has_monthly_income = { resource = minerals value > 8 } }
+				resource_stockpile_compare = { resource = minerals value < 1200 }
+			}
+		}
+
+		income = {
+			minerals = 18
+		}
+	}
+
+	subplan = {
+		scaling = yes
+		set_name = "Stellar AI food recovery"
+		potential = {
+			country_uses_food = yes
+			OR = {
+				NOT = { has_monthly_income = { resource = food value > 6 } }
+				resource_stockpile_compare = { resource = food value < 1200 }
+			}
+		}
+
+		income = {
+			food = 12
+		}
+	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Stellar AI military readiness"
+		potential = {
+			OR = {
+				AND = {
+					highest_threat > 30
+					used_naval_capacity_percent < 0.90
+				}
+				AND = {
+					is_at_war = yes
+					highest_threat > 20
+					used_naval_capacity_percent < 1.00
+				}
+				AND = {
+					OR = {
+						has_valid_civic = civic_machine_terminator
+						has_valid_civic = civic_fanatic_purifiers
+						has_valid_civic = civic_hive_devouring_swarm
+					}
+					highest_threat > 24
+					used_naval_capacity_percent < 1.05
+				}
+				highest_threat > 45
+			}
+		}
+
+		income = {
+			alloys = 14
+		}
+		naval_cap = 25
+	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Stellar AI wartime naval buildup"
+		potential = {
+			country_uses_bio_ships = no
+			is_at_war = yes
+			years_passed > 20
+			used_naval_capacity_percent < 1.22
+			has_monthly_income = { resource = alloys value > 18 }
+			resource_stockpile_compare = { resource = alloys value > 700 }
+			has_monthly_income = { resource = energy value > 10 }
+			resource_stockpile_compare = { resource = energy value > 1800 }
+			has_monthly_income = { resource = minerals value > 10 }
+			resource_stockpile_compare = { resource = minerals value > 1300 }
+		}
+
+		income = {
+			alloys = 52
+		}
+		naval_cap = 72
+	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Stellar AI fleet buildup from alloy surplus"
+		potential = {
+			country_uses_bio_ships = no
+			years_passed > 35
+			used_naval_capacity_percent < 1.03
+			has_monthly_income = { resource = alloys value > 30 }
+			resource_stockpile_compare = { resource = alloys value > 1500 }
+			has_monthly_income = { resource = energy value > 14 }
+			has_monthly_income = { resource = minerals value > 16 }
+			resource_stockpile_compare = { resource = energy value > 2400 }
+			resource_stockpile_compare = { resource = minerals value > 1800 }
+			OR = {
+				NOT = { country_uses_food = yes }
+				AND = {
+					has_monthly_income = { resource = food value > 8 }
+					resource_stockpile_compare = { resource = food value > 1400 }
+				}
+			}
+		}
+
+		income = {
+			alloys = 32
+		}
+		naval_cap = 48
+	}
+
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Stellar AI strategic resource recovery - volatile motes"
+		potential = {
+			OR = {
+				has_technology = tech_mine_volatile_motes
+				has_technology = tech_volatile_motes
+				resource_stockpile_compare = { resource = volatile_motes value > 0 }
+			}
+			OR = {
+				has_deficit = volatile_motes
+				NOT = { has_monthly_income = { resource = volatile_motes value > 2 } }
+				resource_stockpile_compare = { resource = volatile_motes value < 90 }
+			}
+		}
+
+		income = {
+			volatile_motes = 6
+		}
+	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Stellar AI strategic resource recovery - exotic gases"
+		potential = {
+			OR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				resource_stockpile_compare = { resource = exotic_gases value > 0 }
+			}
+			OR = {
+				has_deficit = exotic_gases
+				NOT = { has_monthly_income = { resource = exotic_gases value > 2 } }
+				resource_stockpile_compare = { resource = exotic_gases value < 90 }
+			}
+		}
+
+		income = {
+			exotic_gases = 6
+		}
+	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Stellar AI strategic resource recovery - rare crystals"
+		potential = {
+			OR = {
+				has_technology = tech_mine_rare_crystals
+				has_technology = tech_rare_crystals
+				resource_stockpile_compare = { resource = rare_crystals value > 0 }
+			}
+			OR = {
+				has_deficit = rare_crystals
+				NOT = { has_monthly_income = { resource = rare_crystals value > 2 } }
+				resource_stockpile_compare = { resource = rare_crystals value < 90 }
+			}
+		}
+
+		income = {
+			rare_crystals = 6
+		}
+	}
+
 }

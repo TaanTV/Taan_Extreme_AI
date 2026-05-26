@@ -12,7 +12,7 @@ unity_expenditure_edicts = {
 	potential = {
 		has_resource = {
 			type = unity
-			amount > 1
+			amount > 30
 		}
 	}
 
@@ -31,7 +31,7 @@ unity_expenditure_traditions = {
 	}
 
 	weight = {
-		weight = 0.8
+		weight = 5.8
 	}
 }
 
@@ -74,7 +74,7 @@ unity_expenditure_decisions = {
 	}
 
 	desired_max = {
-		base = 1
+		base = 10
 	}
 }
 
@@ -119,11 +119,11 @@ unity_expenditure_deposit_blockers = {
 	}
 
 	desired_min = {
-		base = 500
+		base = 5
 	}
 	
 	desired_max = {
-		base = 1500
+		base = 15
 	}
 }
 
@@ -141,7 +141,7 @@ unity_upkeep_country = {
 	}
 
 	desired_max = {
-		base = 200
+		base = 20
 	}
 }
 
@@ -154,12 +154,23 @@ unity_upkeep_leaders = {
 		always = yes
 	}
 
+#	weight = {
+#		weight = 0.3
+#	}
+
 	weight = {
-		weight = 0.3
+		weight = 0.3  # old weight
+
+		# hell weight
+		modifier = {
+			factor = 5000  # 
+			years_passed <= 5
+		}
 	}
 
+
 	desired_max = {
-		base = 1
+		base = 50
 	}
 }
 

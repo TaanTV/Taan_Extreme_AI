@@ -3,17 +3,106 @@ stellarai_military_emergency = {
 	OR = {
 		AND = {
 			highest_threat > 30
-			used_naval_capacity_percent < 0.9
+			used_naval_capacity_percent < 0.90
+		}
+		AND = {
+			is_at_war = yes
+			highest_threat > 20
+			used_naval_capacity_percent < 1.00
+		}
+		AND = {
+			OR = {
+				has_valid_civic = civic_machine_terminator
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_hive_devouring_swarm
+			}
+			highest_threat > 24
+			used_naval_capacity_percent < 1.05
 		}
 		highest_threat > 45
 	}
 }
 
+stellarai_energy_recovery_needed = {
+	OR = {
+		NOT = { has_monthly_income = { resource = energy value > 6 } }
+		resource_stockpile_compare = { resource = energy value < 1500 }
+	}
+}
+
+stellarai_minerals_recovery_needed = {
+	OR = {
+		NOT = { has_monthly_income = { resource = minerals value > 8 } }
+		resource_stockpile_compare = { resource = minerals value < 1200 }
+	}
+}
+
+stellarai_food_recovery_needed = {
+	country_uses_food = yes
+	OR = {
+		NOT = { has_monthly_income = { resource = food value > 6 } }
+		resource_stockpile_compare = { resource = food value < 1200 }
+	}
+}
+
+stellarai_basic_econ_recovery_needed = {
+	OR = {
+		OR = {
+			NOT = { has_monthly_income = { resource = energy value > 6 } }
+			resource_stockpile_compare = { resource = energy value < 1500 }
+		}
+		OR = {
+			NOT = { has_monthly_income = { resource = minerals value > 8 } }
+			resource_stockpile_compare = { resource = minerals value < 1200 }
+		}
+		AND = {
+			country_uses_food = yes
+			OR = {
+				NOT = { has_monthly_income = { resource = food value > 6 } }
+				resource_stockpile_compare = { resource = food value < 1200 }
+			}
+		}
+	}
+}
+
+stellarai_country_unity_push = {
+	meets_basic_resource_thresholds = yes
+	OR = {
+		AND = {
+			years_passed < 120
+			num_ascension_perks < 3
+		}
+		AND = {
+			years_passed < 180
+			num_ascension_perks < 4
+		}
+	}
+}
+
+stellarai_planet_unity_push = {
+	exists = owner_or_space_owner
+	owner_or_space_owner = {
+		meets_basic_resource_thresholds = yes
+		OR = {
+			AND = {
+				years_passed < 120
+				num_ascension_perks < 3
+			}
+			AND = {
+				years_passed < 180
+				num_ascension_perks < 4
+			}
+		}
+	}
+}
+
+# Machine empires use energy as their main economic safety rail.
+# Keep this as the single machine-energy recovery trigger to avoid duplicated caution/emergency states.
 stellarai_machine_energy_emergency = {
 	is_machine_empire = yes
 	OR = {
-		NOT = { has_monthly_income = { resource = energy value > 10 } }
-		resource_stockpile_compare = { resource = energy value < 1200 }
+		NOT = { has_monthly_income = { resource = energy value > 30 } }
+		resource_stockpile_compare = { resource = energy value < 3500 }
 	}
 }
 
@@ -27,23 +116,43 @@ stellarai_machine_minerals_emergency = {
 
 stellarai_machine_basic_econ_stable = {
 	is_machine_empire = yes
-	has_monthly_income = { resource = energy value > 18 }
+	has_monthly_income = { resource = energy value > 42 }
 	has_monthly_income = { resource = minerals value > 15 }
 	has_monthly_income = { resource = alloys value > 6 }
-	resource_stockpile_compare = { resource = energy value > 2200 }
+	resource_stockpile_compare = { resource = energy value > 5000 }
 	resource_stockpile_compare = { resource = minerals value > 1400 }
-	NOT = { stellarai_machine_energy_emergency = yes }
-	NOT = { stellarai_machine_minerals_emergency = yes }
+	NOT = {
+		OR = {
+			NOT = { has_monthly_income = { resource = energy value > 30 } }
+			resource_stockpile_compare = { resource = energy value < 3500 }
+		}
+	}
+	NOT = {
+		OR = {
+			NOT = { has_monthly_income = { resource = minerals value > 12 } }
+			resource_stockpile_compare = { resource = minerals value < 900 }
+		}
+	}
 }
 
 stellarai_machine_expand_ok = {
-	stellarai_machine_basic_econ_stable = yes
+	is_machine_empire = yes
+	has_monthly_income = { resource = energy value > 42 }
+	has_monthly_income = { resource = minerals value > 15 }
+	has_monthly_income = { resource = alloys value > 6 }
+	resource_stockpile_compare = { resource = energy value > 5000 }
+	resource_stockpile_compare = { resource = minerals value > 1400 }
 	is_at_war = no
 	has_resource = { type = influence amount > 100 }
 }
 
 stellarai_machine_research_ramp = {
-	stellarai_machine_basic_econ_stable = yes
+	is_machine_empire = yes
+	has_monthly_income = { resource = energy value > 42 }
+	has_monthly_income = { resource = minerals value > 15 }
+	has_monthly_income = { resource = alloys value > 6 }
+	resource_stockpile_compare = { resource = energy value > 5000 }
+	resource_stockpile_compare = { resource = minerals value > 1400 }
 	years_passed > 25
 	num_owned_planets > 3
 }

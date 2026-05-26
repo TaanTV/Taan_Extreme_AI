@@ -66,4 +66,21 @@ ai_resource_production = {
 	}
 }
 
+
+ai_resource_production = {
+	energy = 14
+
+	trigger = {
+		owner = { OR = { NOT = { has_monthly_income = { resource = energy value > 6 } } resource_stockpile_compare = { resource = energy value < 1500 } } }
+	}
+}
+
+ai_resource_production = {
+	energy = 40
+
+	trigger = {
+		owner = { stellarai_machine_energy_emergency = yes }
+	}
+}
+
 ai_weight_coefficient = @stellarai_energy_zone_coefficient

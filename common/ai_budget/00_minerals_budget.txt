@@ -148,7 +148,12 @@ minerals_expenditure_armies_threatened = {
 	}
 
 	weight = {
-		weight = 0.10
+		weight = 0.12
+
+		modifier = {
+			factor = 1.25
+			stellarai_military_emergency = yes
+		}
 	}
 }
 
