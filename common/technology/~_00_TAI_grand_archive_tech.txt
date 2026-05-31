@@ -557,6 +557,10 @@ tech_controlled_mutations_2 = {
             factor = 0.5  # add
             years_passed > 12
         } 
+        modifier = {
+            factor = 0
+            uses_fauna_ship_sizes = no # add
+        }
     }
 }
 

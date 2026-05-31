@@ -124,7 +124,7 @@ tech_mauler_growth_1 = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		factor = 0.01 # add @ai_ship_types_factor
 	}
 }
 
@@ -177,7 +177,7 @@ tech_mauler_growth_2 = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		factor = 0.01 # add @ai_ship_types_factor
 	}
 }
 
@@ -236,7 +236,12 @@ tech_weavers = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		weight = 500
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 
 	starting_potential = {
@@ -271,7 +276,12 @@ tech_weaver_build_speed = {
 	}
 
 	ai_weight = {
-
+		weight = 500
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 
@@ -328,7 +338,12 @@ tech_weaver_growth_1 = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		weight = 500
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 
@@ -381,7 +396,12 @@ tech_weaver_growth_2 = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		weight = 500
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 
@@ -442,7 +462,12 @@ tech_harbingers = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		weight = 1000
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 
@@ -473,7 +498,12 @@ tech_harbinger_build_speed = {
 	}
 
 	ai_weight = {
-
+		weight = 1000
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 
@@ -526,7 +556,12 @@ tech_harbinger_growth_1 = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		weight = 1000
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 
@@ -579,7 +614,12 @@ tech_harbinger_growth_2 = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		weight = 1000
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 
@@ -640,7 +680,12 @@ tech_stingers = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		weight = 1000
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 
@@ -671,7 +716,12 @@ tech_stinger_build_speed = {
 	}
 
 	ai_weight = {
-
+		weight = 1000
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 
@@ -724,7 +774,12 @@ tech_stinger_growth_1 = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		weight = 1000
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 
@@ -777,7 +832,12 @@ tech_stinger_growth_2 = {
 	}
 
 	ai_weight = {
-		factor = @ai_ship_types_factor
+		weight = 1000
+		# add
+		modifier = {
+			factor = 0.001
+			NOT = { years_passed > 10 }
+		}
 	}
 }
 

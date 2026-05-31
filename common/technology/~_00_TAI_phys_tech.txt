@@ -1560,6 +1560,11 @@ tech_fusion_power = {
 			factor = 10
 			years_passed > 20
 		}
+        modifier = {
+            factor = 0
+			is_beastmasters_empire = yes # add
+			years_passed < 100
+        }
 	}
 }
 
@@ -1617,6 +1622,11 @@ tech_cold_fusion_power = {
 			factor = 10
 			years_passed > 8
 		}
+        modifier = {
+            factor = 0
+			is_beastmasters_empire = yes # add
+			years_passed < 100
+        }
 	}
 }
 
@@ -1674,6 +1684,11 @@ tech_antimatter_power = {
 			factor = 10
 			years_passed > 30
 		}
+        modifier = {
+            factor = 0
+			is_beastmasters_empire = yes # add
+			years_passed < 100
+        }
 	}
 }
 
@@ -1727,6 +1742,11 @@ tech_zero_point_power = {
 
 	ai_weight = {
 		base = 10000 # add 
+        modifier = {
+            factor = 0
+			is_beastmasters_empire = yes # add
+			years_passed < 100
+        }
 	}
 }
 

@@ -733,7 +733,7 @@ tech_orbital_arc_furnace = {
         # add 13 years
         modifier = {
             factor = 25000
-            years_passed >= 14
+            years_passed >= 44
         }
     }
 }

@@ -843,23 +843,7 @@ tech_missiles_2 = {
 	}
 
 	ai_weight = {
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_fanatic_militarist
-		}
-
-		modifier = {
-			factor = @favored_weapon_ai_tech_factor
-			is_preferred_weapons = weapon_type_explosive
-		}
-		modifier = {
-			factor = @disfavored_weapon_ai_tech_factor
-			NOT = { is_preferred_weapons = weapon_type_explosive }
-		}
+		base = 100 # add 
 	}
 	potential = {
 		country_uses_bio_ships = no
@@ -889,23 +873,7 @@ tech_missiles_3 = {
 	}
 
 	ai_weight = {
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_fanatic_militarist
-		}
-
-		modifier = {
-			factor = @favored_weapon_ai_tech_factor
-			is_preferred_weapons = weapon_type_explosive
-		}
-		modifier = {
-			factor = @disfavored_weapon_ai_tech_factor
-			NOT = { is_preferred_weapons = weapon_type_explosive }
-		}
+		base = 0.0001 # add 
 	}
 	potential = {
 		country_uses_bio_ships = no
@@ -935,23 +903,7 @@ tech_missiles_4 = {
 	}
 
 	ai_weight = {
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_fanatic_militarist
-		}
-
-		modifier = {
-			factor = @favored_weapon_ai_tech_factor
-			is_preferred_weapons = weapon_type_explosive
-		}
-		modifier = {
-			factor = @disfavored_weapon_ai_tech_factor
-			NOT = { is_preferred_weapons = weapon_type_explosive }
-		}
+		base = 0.0001 # add 
 	}
 	potential = {
 		country_uses_bio_ships = no
@@ -981,23 +933,7 @@ tech_missiles_5 = {
 	}
 
 	ai_weight = {
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_fanatic_militarist
-		}
-
-		modifier = {
-			factor = @favored_weapon_ai_tech_factor
-			is_preferred_weapons = weapon_type_explosive
-		}
-		modifier = {
-			factor = @disfavored_weapon_ai_tech_factor
-			NOT = { is_preferred_weapons = weapon_type_explosive }
-		}
+		base = 0.0001 # add 
 	}
 	potential = {
 		country_uses_bio_ships = no
@@ -1043,25 +979,8 @@ tech_swarmer_missiles_1 = {
 		}
 
 	}
-
 	ai_weight = {
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_fanatic_militarist
-		}
-
-		modifier = {
-			factor = @favored_weapon_ai_tech_factor
-			is_preferred_weapons = weapon_type_explosive
-		}
-		modifier = {
-			factor = @disfavored_weapon_ai_tech_factor
-			NOT = { is_preferred_weapons = weapon_type_explosive }
-		}
+		base = 100000 # add 
 	}
 }
 
@@ -1100,23 +1019,7 @@ tech_swarmer_missiles_2 = {
 	}
 
 	ai_weight = {
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_fanatic_militarist
-		}
-
-		modifier = {
-			factor = @favored_weapon_ai_tech_factor
-			is_preferred_weapons = weapon_type_explosive
-		}
-		modifier = {
-			factor = @disfavored_weapon_ai_tech_factor
-			NOT = { is_preferred_weapons = weapon_type_explosive }
-		}
+		base = 10000 # add 
 	}
 }
 

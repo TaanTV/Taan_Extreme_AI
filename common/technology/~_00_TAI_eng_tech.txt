@@ -128,6 +128,16 @@ tech_destroyers = {
 			factor = 0.001
 			NOT = { years_passed > 10 }
 		}
+		modifier = {
+			factor = 0.1
+			is_beastmasters_empire = yes
+			years_passed < 20
+		}
+        modifier = {
+            factor = 0
+			is_beastmasters_empire = yes # add
+			years_passed < 20
+        }
 	}
 }
 
@@ -156,7 +166,6 @@ tech_cruisers = {
 	modifier = {
 		command_limit_add = 40
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = 0.1
@@ -185,7 +194,6 @@ tech_cruisers = {
 			has_tradition = tr_supremacy_adopt
 		}
 	}
-
 	ai_weight = {
 		weight = 1000 # add 
 		
@@ -194,6 +202,16 @@ tech_cruisers = {
 			factor = 0.001
 			NOT = { years_passed > 10 }
 		}
+		modifier = {
+			factor = 0.001
+			is_beastmasters_empire = yes
+			years_passed < 28
+		}
+        modifier = {
+            factor = 0
+			is_beastmasters_empire = yes # add
+			years_passed < 28
+        }
 	}
 }
 
@@ -258,6 +276,16 @@ tech_battleships = {
 			factor = 0.001
 			NOT = { years_passed > 40 }
 		}
+		modifier = {
+			factor = 0.1
+			is_beastmasters_empire = yes
+			years_passed < 28
+		}
+        modifier = {
+            factor = 0
+			is_beastmasters_empire = yes # add
+			years_passed < 28
+        }
 	}
 }
 

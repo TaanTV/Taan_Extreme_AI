@@ -190,6 +190,8 @@ building_robot_assembly_plant = {
 	prerequisites = {
 		"tech_robotic_workers"
 	}
+    ai_estimate_without_unemployment = yes  # add
+    additional_ai_weight = 10000            # add
 }
 
 building_robot_assembly_complex = {
@@ -364,6 +366,8 @@ building_robot_assembly_complex = {
 	prerequisites = {
 		tech_robot_assembly_complex
 	}
+    ai_estimate_without_unemployment = yes  # add
+    additional_ai_weight = 10000            # add
 }
 
 #############
@@ -556,6 +560,8 @@ building_machine_assembly_complex = {
 	prerequisites = {
 		tech_mega_assembly
 	}
+    ai_estimate_without_unemployment = yes  # add
+    additional_ai_weight = 10000            # add
 }
 
 #############
